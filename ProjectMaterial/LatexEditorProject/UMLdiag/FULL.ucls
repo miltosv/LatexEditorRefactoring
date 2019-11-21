@@ -1,0 +1,632 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.3" icons="true" automaticImage="PNG" always-add-relationships="true" generalizations="true" 
+  realizations="true" associations="true" dependencies="true" nesting-relationships="true" router="FAN">  
+  <interface id="1" language="java" name="controller.commands.Command" project="LatexEditorProjectSWDEVII" 
+    file="/LatexEditorProjectSWDEVII/src/controller/commands/Command.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="81" width="103" x="1851" y="264"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="2" language="java" name="controller.LatexEditorController" project="LatexEditorProjectSWDEVII" 
+    file="/LatexEditorProjectSWDEVII/src/controller/LatexEditorController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="219" x="2727" y="89"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="controller.commands.DisableVersionsManagementCommand" 
+    project="LatexEditorProjectSWDEVII" 
+    file="/LatexEditorProjectSWDEVII/src/controller/commands/DisableVersionsManagementCommand.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="305" x="1179" y="89"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="view.MainWindow" project="LatexEditorProjectSWDEVII" 
+    file="/LatexEditorProjectSWDEVII/src/view/MainWindow.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="176" x="2866" y="-796"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="controller.commands.SaveCommand" project="LatexEditorProjectSWDEVII" 
+    file="/LatexEditorProjectSWDEVII/src/controller/commands/SaveCommand.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="191" x="1851" y="89"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="controller.commands.RollbackToPreviousVersionCommand" 
+    project="LatexEditorProjectSWDEVII" 
+    file="/LatexEditorProjectSWDEVII/src/controller/commands/RollbackToPreviousVersionCommand.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="296" x="843" y="89"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="view.OpeningWindow" project="LatexEditorProjectSWDEVII" 
+    file="/LatexEditorProjectSWDEVII/src/view/OpeningWindow.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="117" x="3348" y="-796"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="model.Document" project="LatexEditorProjectSWDEVII" 
+    file="/LatexEditorProjectSWDEVII/src/model/Document.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="297" width="234" x="3128" y="1113"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="9" language="java" name="model.strategies.VersionsStrategy" project="LatexEditorProjectSWDEVII" 
+    file="/LatexEditorProjectSWDEVII/src/model/strategies/VersionsStrategy.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="210" x="2836" y="920"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="10" language="java" name="view.ChooseTemplate" project="LatexEditorProjectSWDEVII" 
+    file="/LatexEditorProjectSWDEVII/src/view/ChooseTemplate.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="419" x="2866" y="-603"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="controller.commands.CommandFactory" project="LatexEditorProjectSWDEVII" 
+    file="/LatexEditorProjectSWDEVII/src/controller/commands/CommandFactory.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="203" x="1851" y="-410"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="controller.commands.AddLatexCommand" project="LatexEditorProjectSWDEVII" 
+    file="/LatexEditorProjectSWDEVII/src/controller/commands/AddLatexCommand.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="213" x="367" y="89"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="controller.commands.ChangeVersionsStrategyCommand" 
+    project="LatexEditorProjectSWDEVII" 
+    file="/LatexEditorProjectSWDEVII/src/controller/commands/ChangeVersionsStrategyCommand.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="287" x="1524" y="89"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="14" language="java" name="controller.commands.EditCommand" project="LatexEditorProjectSWDEVII" 
+    file="/LatexEditorProjectSWDEVII/src/controller/commands/EditCommand.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="183" x="620" y="89"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="15" language="java" name="controller.commands.LoadCommand" project="LatexEditorProjectSWDEVII" 
+    file="/LatexEditorProjectSWDEVII/src/controller/commands/LoadCommand.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="242" x="2424" y="89"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="16" language="java" name="controller.commands.EnableVersionsManagementCommand" 
+    project="LatexEditorProjectSWDEVII" 
+    file="/LatexEditorProjectSWDEVII/src/controller/commands/EnableVersionsManagementCommand.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="302" x="2082" y="89"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="17" language="java" name="model.strategies.VersionsStrategyFactory" project="LatexEditorProjectSWDEVII" 
+    file="/LatexEditorProjectSWDEVII/src/model/strategies/VersionsStrategyFactory.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="99" width="221" x="1590" y="264"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="18" language="java" name="model.VersionsManager" project="LatexEditorProjectSWDEVII" 
+    file="/LatexEditorProjectSWDEVII/src/model/VersionsManager.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="387" width="285" x="2822" y="264"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="19" language="java" name="model.strategies.VolatileVersionsStrategy" project="LatexEditorProjectSWDEVII" 
+    file="/LatexEditorProjectSWDEVII/src/model/strategies/VolatileVersionsStrategy.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="171" width="210" x="2876" y="691"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="20" language="java" name="view.LatexEditorView" project="LatexEditorProjectSWDEVII" 
+    file="/LatexEditorProjectSWDEVII/src/view/LatexEditorView.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="459" width="242" x="3139" y="-410"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="21" language="java" name="model.strategies.StableVersionsStrategy" project="LatexEditorProjectSWDEVII" 
+    file="/LatexEditorProjectSWDEVII/src/model/strategies/StableVersionsStrategy.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="189" width="210" x="2605" y="691"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="22" language="java" name="controller.commands.CreateCommand" project="LatexEditorProjectSWDEVII" 
+    file="/LatexEditorProjectSWDEVII/src/controller/commands/CreateCommand.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="290" x="2986" y="89"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="23" language="java" name="model.DocumentManager" project="LatexEditorProjectSWDEVII" 
+    file="/LatexEditorProjectSWDEVII/src/model/DocumentManager.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="192" x="3168" y="264"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <realization id="24">    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="9"/>  
+  </realization>  
+  <association id="25">    
+    <end type="SOURCE" refId="22" navigable="false">      
+      <attribute id="26" name="versionsManager"/>      
+      <multiplicity id="27" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="18" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="28">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="29" name="versionsManager"/>      
+      <multiplicity id="30" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="18" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="31">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="5"/>  
+  </dependency>  
+  <dependency id="32">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="11"/>  
+  </dependency>  
+  <association id="33">    
+    <bendpoint x="3076" y="920"/>    
+    <end type="SOURCE" refId="19" navigable="false">      
+      <attribute id="34" name="history"/>      
+      <multiplicity id="35" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="36">    
+    <bendpoint x="2795" y="-603"/>    
+    <bendpoint x="2795" y="-410"/>    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="2"/>  
+  </dependency>  
+  <realization id="37">    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="9"/>  
+  </realization>  
+  <dependency id="38">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="12"/>  
+  </dependency>  
+  <dependency id="39">    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="21"/>  
+  </dependency>  
+  <dependency id="40">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="14"/>  
+  </dependency>  
+  <association id="41">    
+    <bendpoint x="3306" y="89"/>    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="42" name="documentManager"/>      
+      <multiplicity id="43" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="23" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="44">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="10"/>  
+  </dependency>  
+  <realization id="45">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="1"/>  
+  </realization>  
+  <association id="46">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="47" name="commands"/>      
+      <multiplicity id="48" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="49">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="10"/>  
+  </dependency>  
+  <realization id="50">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="1"/>  
+  </realization>  
+  <dependency id="51">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="22"/>  
+  </dependency>  
+  <dependency id="52">    
+    <bendpoint x="2816" y="-410"/>    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="2"/>  
+  </dependency>  
+  <dependency id="53">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="18"/>  
+  </dependency>  
+  <realization id="54">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="1"/>  
+  </realization>  
+  <dependency id="55">    
+    <bendpoint x="336" y="89"/>    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="1"/>  
+  </dependency>  
+  <realization id="56">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="1"/>  
+  </realization>  
+  <dependency id="57">    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="19"/>  
+  </dependency>  
+  <dependency id="58">    
+    <bendpoint x="3137" y="264"/>    
+    <bendpoint x="3137" y="691"/>    
+    <bendpoint x="3137" y="920"/>    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="8"/>  
+  </dependency>  
+  <realization id="59">    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="1"/>  
+  </realization>  
+  <association id="60">    
+    <end type="SOURCE" refId="16" navigable="false">      
+      <attribute id="61" name="versionsManager"/>      
+      <multiplicity id="62" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="18" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="63">    
+    <bendpoint x="3411" y="-603"/>    
+    <bendpoint x="3411" y="-410"/>    
+    <bendpoint x="3390" y="89"/>    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="18"/>  
+  </dependency>  
+  <association id="64">    
+    <end type="SOURCE" refId="22" navigable="false">      
+      <attribute id="65" name="documentManager"/>      
+      <multiplicity id="66" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="23" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="67">    
+    <bendpoint x="3315" y="-603"/>    
+    <bendpoint x="3087" y="-410"/>    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="2"/>  
+  </dependency>  
+  <dependency id="68">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="8"/>  
+  </dependency>  
+  <realization id="69">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="1"/>  
+  </realization>  
+  <association id="70">    
+    <bendpoint x="3357" y="-603"/>    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="71" name="latexEditorView"/>      
+      <multiplicity id="72" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="20" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="73">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="19"/>  
+  </dependency>  
+  <association id="74">    
+    <end type="SOURCE" refId="15" navigable="false">      
+      <attribute id="75" name="versionsManager"/>      
+      <multiplicity id="76" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="18" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="77">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="1"/>  
+  </realization>  
+  <association id="78">    
+    <bendpoint x="2222" y="691"/>    
+    <end type="SOURCE" refId="17" navigable="false">      
+      <attribute id="79" name="strategies"/>      
+      <multiplicity id="80" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="81">    
+    <bendpoint x="3116" y="691"/>    
+    <bendpoint x="3116" y="920"/>    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="8"/>  
+  </dependency>  
+  <dependency id="82">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="16"/>  
+  </dependency>  
+  <association id="83">    
+    <bendpoint x="3348" y="89"/>    
+    <end type="SOURCE" refId="20" navigable="false">      
+      <attribute id="84" name="versionsManager"/>      
+      <multiplicity id="85" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="18" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="86">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <association id="87">    
+    <bendpoint x="2845" y="691"/>    
+    <end type="SOURCE" refId="18" navigable="false">      
+      <attribute id="88" name="strategy"/>      
+      <multiplicity id="89" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="90">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="91" name="versionsManager"/>      
+      <multiplicity id="92" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="18" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="93">    
+    <end type="SOURCE" refId="16"/>    
+    <end type="TARGET" refId="1"/>  
+  </realization>  
+  <realization id="94">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="1"/>  
+  </realization>  
+  <dependency id="95">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="6"/>  
+  </dependency>  
+  <association id="96">    
+    <end type="SOURCE" refId="20" navigable="false">      
+      <attribute id="97" name="controller"/>      
+      <multiplicity id="98" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="99">    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="100" name="versionsManager"/>      
+      <multiplicity id="101" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="18" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="102">    
+    <bendpoint x="2835" y="-603"/>    
+    <bendpoint x="3108" y="-410"/>    
+    <bendpoint x="3327" y="89"/>    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="18"/>  
+  </dependency>  
+  <dependency id="103">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="21"/>  
+  </dependency>  
+  <dependency id="104">    
+    <bendpoint x="2805" y="920"/>    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="8"/>  
+  </dependency>  
+  <dependency id="105">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="13"/>  
+  </dependency>  
+  <association id="106">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="107" name="versionsManager"/>      
+      <multiplicity id="108" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="18" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="109">    
+    <bendpoint x="3474" y="-603"/>    
+    <bendpoint x="3474" y="-410"/>    
+    <bendpoint x="3474" y="89"/>    
+    <bendpoint x="3432" y="264"/>    
+    <bendpoint x="3369" y="691"/>    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="9"/>  
+  </dependency>  
+  <association id="110">    
+    <bendpoint x="3336" y="-603"/>    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="111" name="latexEditorView"/>      
+      <multiplicity id="112" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="20" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="113">    
+    <bendpoint x="3390" y="691"/>    
+    <bendpoint x="3390" y="920"/>    
+    <end type="SOURCE" refId="23" navigable="false">      
+      <attribute id="114" name="templates"/>      
+      <multiplicity id="115" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="116">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="117" name="versionsManager"/>      
+      <multiplicity id="118" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="18" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="119">    
+    <bendpoint x="3411" y="89"/>    
+    <bendpoint x="3411" y="264"/>    
+    <bendpoint x="3411" y="691"/>    
+    <bendpoint x="3411" y="920"/>    
+    <end type="SOURCE" refId="20" navigable="false">      
+      <attribute id="120" name="currentDocument"/>      
+      <multiplicity id="121" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="122">    
+    <end type="SOURCE" refId="14" navigable="false">      
+      <attribute id="123" name="versionsManager"/>      
+      <multiplicity id="124" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="18" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="125">    
+    <bendpoint x="3369" y="89"/>    
+    <end type="SOURCE" refId="18" navigable="false">      
+      <attribute id="126" name="latexEditorView"/>      
+      <multiplicity id="127" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="20" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="128">    
+    <bendpoint x="3390" y="-603"/>    
+    <bendpoint x="3432" y="-410"/>    
+    <bendpoint x="3453" y="89"/>    
+    <bendpoint x="3453" y="264"/>    
+    <bendpoint x="3453" y="691"/>    
+    <bendpoint x="3453" y="920"/>    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="8"/>  
+  </dependency>  
+  <association id="129">    
+    <bendpoint x="2696" y="89"/>    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="130" name="versionsManager"/>      
+      <multiplicity id="131" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="18" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="132">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="15"/>  
+  </dependency>  
+  <association id="133">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="134" name="latexEditorView"/>      
+      <multiplicity id="135" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="20" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="136">    
+    <bendpoint x="3453" y="-603"/>    
+    <bendpoint x="3453" y="-410"/>    
+    <bendpoint x="3432" y="89"/>    
+    <bendpoint x="3390" y="264"/>    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="19"/>  
+  </dependency>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

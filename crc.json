@@ -1,0 +1,265 @@
+https://echeung.me/crcmaker/
+[
+  {
+    "name": "Document",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Represents the main model of the data of this software",
+      "Handles writing files to the filesystem"
+    ],
+    "collaborators": [
+      "None"
+    ]
+  },
+  {
+    "name": "Document Manager",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Handles creation of new objects of type Document",
+      "Handles template creation"
+    ],
+    "collaborators": [
+      "Document"
+    ]
+  },
+  {
+    "name": "VersionsManager",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Controls the versioning system.",
+      "Enables/disables the versioning system",
+      "Sets the mode / strategy of operation (Volatile/Stable)",
+      "Communicates with the front end"
+    ],
+    "collaborators": [
+      "VersionsStrategy",
+      "LatexEditorView"
+    ]
+  },
+  {
+    "name": "VersionsStrategy",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 3,
+    "responsibilities": [
+      "Puts new version of document in the versioning system",
+      "gets previous version of document",
+      "sets entire history of documents",
+      "returns entire history of documents",
+      "removes latest version from the versioning system"
+    ],
+    "collaborators": [
+      "Document"
+    ]
+  },
+  {
+    "name": "VolatileVersionsStrategy",
+    "superclasses": "VersionsStrategy",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Stores document versions in Memory (ArrayList)",
+      "Returns most recent version stored.",
+      "Returns entire history of document versions (ArrayList)",
+      "Can \"be fed\"  entire document history in form of ArrayList"
+    ],
+    "collaborators": [
+      "Document",
+      "VersionsManager"
+    ]
+  },
+  {
+    "name": "StableVersionsStrategy",
+    "superclasses": "VersionsStrategy",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Saves the document versions on the filesystem in .tex format",
+      "Saves new versions of Document",
+      "Returns previous version of Document",
+      "Can \"be fed\" entire Document version history to be saved on the filesystem",
+      "Returns entire document history from filesystem"
+    ],
+    "collaborators": [
+      "VersionsStrategy",
+      "Document",
+      "VersionsManager"
+    ]
+  },
+  {
+    "name": "VersionsStrategyFactory",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Creates objects of VolatileVersionStrategy or StableVersionStrategy based on Input"
+    ],
+    "collaborators": [
+      ""
+    ]
+  },
+  {
+    "name": "LatexEditorController",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Enacts commands according to input from the GUI"
+    ],
+    "collaborators": [
+      "LatexEditorView",
+      "Command (Interface)",
+      "CommandFactory"
+    ]
+  },
+  {
+    "name": "Command",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 3,
+    "responsibilities": [
+      "executes command"
+    ],
+    "collaborators": [
+      ""
+    ]
+  },
+  {
+    "name": "CommandFactory",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Creates instances of command classes that implement command interface"
+    ],
+    "collaborators": [
+      "VersionsManager",
+      "DocumentManager",
+      "EditCommand",
+      "AddLatexCommand",
+      "rollbacktoPreviousVersionCommand",
+      "SaveCommand",
+      "LoadCommand",
+      "CreateCommand",
+      "enableVersionsCommand",
+      "DisableVersionsCommand",
+      "ChangeVersionsStrategy"
+    ]
+  },
+  {
+    "name": "EnableVersionsManager",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "EnablesVersioning"
+    ],
+    "collaborators": [
+      "VersionsManager"
+    ]
+  },
+  {
+    "name": "DisableVersionsManager",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Disables Versioning System"
+    ],
+    "collaborators": [
+      "VersionManager"
+    ]
+  },
+  {
+    "name": "AddLatexCommand",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "executes save in VersionsManager"
+    ],
+    "collaborators": [
+      "VersionsManager"
+    ]
+  },
+  {
+    "name": "CreateCommand",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Gets Document manager to create a new document based on input (type)",
+      "Sets document created as current in VersionsManager"
+    ],
+    "collaborators": [
+      "DocumentManager",
+      "VersionsManager"
+    ]
+  },
+  {
+    "name": "EditCommand",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Calls VersionsCommand to save the contents of the document"
+    ],
+    "collaborators": [
+      "VersionsCommand"
+    ]
+  },
+  {
+    "name": "ChangeVersionsCommand",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Calls VersionsManager to change versioning Strategy"
+    ],
+    "collaborators": [
+      "VersionsManager"
+    ]
+  },
+  {
+    "name": "LoadCommand",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Calls VersionsManager to load document from file"
+    ],
+    "collaborators": [
+      "VersionsManager"
+    ]
+  },
+  {
+    "name": "SaveCommand",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Calls Versions manager to save document to file"
+    ],
+    "collaborators": [
+      "VersionsManager"
+    ]
+  },
+  {
+    "name": "RollbacktoPreviousVersionCommand",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "calls VersionsManager to roll back to previous version of the document"
+    ],
+    "collaborators": [
+      "VersionsManager"
+    ]
+  }
+]
