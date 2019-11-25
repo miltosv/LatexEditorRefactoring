@@ -1,0 +1,10 @@
+
+
+
+1. MainWindow class has misplaced responsibilities
+	- distribute correctly in command classes
+	
+2. Extract Super Class for command classes
+
+
+3. VersionsManager mazi 
