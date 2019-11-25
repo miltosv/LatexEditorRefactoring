@@ -1,5 +1,10 @@
 package controller;
 
+import static java.nio.file.Files.readAllBytes;
+import static java.nio.file.Paths.get;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.util.HashMap;
 
 import controller.commands.AddLatexCommand;
@@ -13,24 +18,37 @@ import controller.commands.EnableVersionsManagementCommand;
 import controller.commands.LoadCommand;
 import controller.commands.RollbackToPreviousVersionCommand;
 import controller.commands.SaveCommand;
+import model.Document;
 import model.VersionsManager;
 
 public class LatexEditorController{
 	private HashMap<String, Command> commands;
+	private VersionsManager versionsManager;
 	
 	public LatexEditorController(VersionsManager versionsManager) {
 		CommandFactory commandFactory = new CommandFactory(versionsManager);
-		
+		this.versionsManager=versionsManager;
 		commands = new HashMap<String, Command>(); 
-		commands.put("addLatex", commandFactory.createCommand("addLatex"));
-		commands.put("changeVersionsStrategy", commandFactory.createCommand("changeVersionsStrategy"));
-		commands.put("create", commandFactory.createCommand("create"));
-		commands.put("disableVersionsManagement", commandFactory.createCommand("disableVersionsManagement"));
-		commands.put("edit", commandFactory.createCommand("edit"));
-		commands.put("enableVersionsManagement", commandFactory.createCommand("enableVersionsManagement"));
-		commands.put("load", commandFactory.createCommand("load"));
-		commands.put("rollbackToPreviousVersion", commandFactory.createCommand("rollbackToPreviousVersion"));
-		commands.put("save", commandFactory.createCommand("save"));
+		this.dynamicallyCreateCommands("C:\\Users\\milti\\LatexEditorRefactoring\\ProjectMaterial\\LatexEditorProject\\src\\controller\\commands.txt");
+		
+	}
+	private void dynamicallyCreateCommands(String PropertiesFilePath){
+		System.out.println("hello");
+		CommandFactory commandFactory = new CommandFactory(versionsManager);
+		try {
+			BufferedReader CommandsSpecsReader = new BufferedReader(
+					new FileReader (PropertiesFilePath)
+					);
+			System.out.println("hello22");
+			String currentSpec;
+			while ((currentSpec = CommandsSpecsReader.readLine()) != null) {
+				commands.put(currentSpec,commandFactory.createCommand(currentSpec));	
+				
+			}
+			CommandsSpecsReader.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		
 	}
 	
