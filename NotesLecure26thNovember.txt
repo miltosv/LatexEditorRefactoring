@@ -1,0 +1,16 @@
+Refactories:
+	LatexEditorController (google types of clones, there should be 5) Here it repeats the same code multiple times just to fill a hash map. This is done 9 times. Each command could be considered a clone.
+	Substitute algorithm. Take this thing and make a new algorithm that does the thing for you. We could go from 15 lines of code to 3. In the future addition of a new command won't need extra code to be written in this part of the application. OCP open for extension closed for modification principle.
+	Controller commands package. Extract super class. Create a new "mama" class. Or Inline Class = merge two classes together. AddLatexCommand and EditCommand are EXACTLY THE SAME!!!!
+	Document Manager: Long Methods and duplicate code AGAIN . It shouldn't contain hardcoded template contents in the bloody class.... 150 lines of code just for that is TOO MUCH
+	Version Manager: Dead code. Some methods aren't even used. Either commented out or methods not used. We should find whether a method is called somewhere else. right click on method open call hierarchy... Or just commend the method out see whether it crashes the program. whatever is not used THROW it out
+MESSAGE CHAINS in document manager. One method calls another method that calls another method that calls another method that calls another method that calls an other method that calls an other method and so on and so on and so on. (Middle Man) Load from file is one of this kind of method example getType in versions manager calls the latexEditorView.getType() 
+	LatexEditorView: There are methods that have to do with the data portion of the system. Move method also needs to move fields (that are used by the method) for example load from file uses two fields type and current document. What should be done there? TREAD with CAUTION. Why should current document and type be in view. Put them in the controller. 
+	MainWindow: We have code for the addLatexCommand. Obviously it shouldn't be there, especially in the gui. It breaks the MVC and also it really makes extension very hard to do.
+
+
+ALWAYS REMEMBER REFACTOR ONE THING AT A TIME!!!!! BABY STEPS OR WE EFF UP THE WHOLE SYSTEM.
+
+
+Extensions
+	Insert two new commands, Save an encrypted command, load the file and decrypt it
