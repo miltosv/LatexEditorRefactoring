@@ -33,13 +33,13 @@ public class LatexEditorController{
 		
 	}
 	private void dynamicallyCreateCommands(String PropertiesFilePath){
-		System.out.println("hello");
+		
 		CommandFactory commandFactory = new CommandFactory(versionsManager);
 		try {
 			BufferedReader CommandsSpecsReader = new BufferedReader(
 					new FileReader (PropertiesFilePath)
 					);
-			System.out.println("hello22");
+			
 			String currentSpec;
 			while ((currentSpec = CommandsSpecsReader.readLine()) != null) {
 				commands.put(currentSpec,commandFactory.createCommand(currentSpec));	

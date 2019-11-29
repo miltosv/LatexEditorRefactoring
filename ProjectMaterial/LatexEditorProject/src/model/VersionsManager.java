@@ -38,36 +38,30 @@ public class VersionsManager {
 		latexEditorView.setCurrentDocument(document);
 	}
 	
-	public Document setPreviousVersion() {
-		return null;
-	}
 	
-	public void rollbackToPreviousVersion() {
-		
-	}
-
+//TODO delegate Remove
 	public String getType() {
-		// TODO Auto-generated method stub
+		
 		return latexEditorView.getType();
 	}
 
 	public void saveContents() {
-		// TODO Auto-generated method stub
+		
 		latexEditorView.saveContents();
 	}
 
 	public void saveToFile() {
-		// TODO Auto-generated method stub
+		
 		latexEditorView.saveToFile();
 	}
 
 	public void loadFromFile() {
-		// TODO Auto-generated method stub
+		
 		latexEditorView.loadFromFile();
 	}
 
 	public void enableStrategy() {
-		// TODO Auto-generated method stub
+		
 		String strategyType = latexEditorView.getStrategy();
 		if(strategyType.equals("volatile") && strategy instanceof VolatileVersionsStrategy) {
 			enable();
@@ -91,7 +85,7 @@ public class VersionsManager {
 	}
 
 	public void changeStrategy() {
-		// TODO Auto-generated method stub
+		
 		String strategyType = latexEditorView.getStrategy();
 		if(strategyType.equals("stable") && strategy instanceof VolatileVersionsStrategy) {
 			VersionsStrategy newStrategy = new StableVersionsStrategy();
@@ -108,12 +102,12 @@ public class VersionsManager {
 	}
 
 	public void  putVersion(Document document) {
-		// TODO Auto-generated method stub
+	
 		strategy.putVersion(document);
 	}
 
 	public void rollback() {
-		// TODO Auto-generated method stub
+		
 		if(isEnabled() == false) {
 			JOptionPane.showMessageDialog(null, "Strategy is not enabled", "InfoBox", JOptionPane.INFORMATION_MESSAGE);
 		}
@@ -130,8 +124,5 @@ public class VersionsManager {
 		
 	}
 
-	public VersionsStrategy getStrategy() {
-		// TODO Auto-generated method stub
-		return strategy;
-	}
+	
 }

@@ -1,0 +1,5 @@
+reportTemplate src\\resources\\templates\\report-template.tex
+emptyTemplate src\\resources\\templates\\empty-template.tex
+bookTemplate src\\resources\\templates\\book-template.tex
+articleTemplate src\\resources\\templates\\article-template.tex
+letterTemplate src\\resources\\templates\\letter-template.tex
