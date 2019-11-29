@@ -1,5 +1,0 @@
-reportTemplate //LatexEditorProject//src//tex-templates//report-template.tex
-emptyTemplate //LatexEditorProject//src//tex-templates//empty.tex
-bookTemplate //LatexEditorProject//src//tex-templates//book-template.tex
-articleTemplate //LatexEditorProject//src//tex-templates//article-template.tex
-letterTemplate //LatexEditorProject//src/tex-templates//letter-template.tex

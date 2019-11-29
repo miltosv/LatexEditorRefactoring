@@ -11,7 +11,7 @@ public class DocumentManager {
 	private HashMap<String, Document> templates;
 	private static final int ID=0;
 	private static final int CONTENTS=1;
-	private static final String TemplateFilePath = "src\\model\\templateSettings";
+	private static final String TemplateFilePath ="src\\resources\\settings\\templateSettings";
 	
 	public DocumentManager() {
 		templates = new HashMap<String, Document>();

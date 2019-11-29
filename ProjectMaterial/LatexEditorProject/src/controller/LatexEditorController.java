@@ -29,7 +29,7 @@ public class LatexEditorController{
 		CommandFactory commandFactory = new CommandFactory(versionsManager);
 		this.versionsManager=versionsManager;
 		commands = new HashMap<String, Command>(); 
-		this.dynamicallyCreateCommands("C:\\Users\\milti\\LatexEditorRefactoring\\ProjectMaterial\\LatexEditorProject\\src\\controller\\commands.txt");
+		this.dynamicallyCreateCommands("src\\resources\\settings\\commands");
 		
 	}
 	private void dynamicallyCreateCommands(String PropertiesFilePath){
