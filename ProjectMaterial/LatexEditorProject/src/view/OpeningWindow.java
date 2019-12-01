@@ -6,8 +6,8 @@ import javax.swing.JFrame;
 
 import controller.LatexEditorController;
 import model.VersionsManager;
-import model.strategies.VersionsStrategy;
-import model.strategies.VolatileVersionsStrategy;
+import model.versioning.VersionsStrategy;
+import model.versioning.VolatileVersionsStrategy;
 
 import javax.swing.JButton;
 import javax.swing.JFileChooser;

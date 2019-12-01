@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class-diagram version="1.2.3" icons="true" automaticImage="PNG" always-add-relationships="false" generalizations="true" 
   realizations="true" associations="true" dependencies="true" nesting-relationships="true" router="FAN">  
-  <class id="1" language="java" name="model.strategies.VersionsStrategyFactory" project="LatexEditorProjectSWDEVII" 
-    file="/LatexEditorProjectSWDEVII/src/model/strategies/VersionsStrategyFactory.java" binary="false" 
+  <class id="1" language="java" name="model.versioning.VersionsStrategyFactory" project="LatexEditorProjectSWDEVII" 
+    file="/LatexEditorProjectSWDEVII/src/model/versioning/VersionsStrategyFactory.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="99" width="221" x="213" y="-8"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -20,8 +20,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="3" language="java" name="model.strategies.VolatileVersionsStrategy" project="LatexEditorProjectSWDEVII" 
-    file="/LatexEditorProjectSWDEVII/src/model/strategies/VolatileVersionsStrategy.java" binary="false" 
+  <class id="3" language="java" name="model.versioning.VolatileVersionsStrategy" project="LatexEditorProjectSWDEVII" 
+    file="/LatexEditorProjectSWDEVII/src/model/versioning/VolatileVersionsStrategy.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="171" width="210" x="463" y="437"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -39,8 +39,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <interface id="5" language="java" name="model.strategies.VersionsStrategy" project="LatexEditorProjectSWDEVII" 
-    file="/LatexEditorProjectSWDEVII/src/model/strategies/VersionsStrategy.java" binary="false" corner="BOTTOM_RIGHT">    
+  <interface id="5" language="java" name="model.versioning.VersionsStrategy" project="LatexEditorProjectSWDEVII" 
+    file="/LatexEditorProjectSWDEVII/src/model/versioning/VersionsStrategy.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="153" width="210" x="253" y="666"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
@@ -48,8 +48,8 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <class id="6" language="java" name="model.strategies.StableVersionsStrategy" project="LatexEditorProjectSWDEVII" 
-    file="/LatexEditorProjectSWDEVII/src/model/strategies/StableVersionsStrategy.java" binary="false" 
+  <class id="6" language="java" name="model.versioning.StableVersionsStrategy" project="LatexEditorProjectSWDEVII" 
+    file="/LatexEditorProjectSWDEVII/src/model/versioning/StableVersionsStrategy.java" binary="false" 
     corner="BOTTOM_RIGHT">    
     <position height="189" width="210" x="213" y="437"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
@@ -67,80 +67,96 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <dependency id="8">    
-    <end type="SOURCE" refId="1"/>    
-    <end type="TARGET" refId="3"/>  
-  </dependency>  
-  <association id="9">    
-    <bendpoint x="703" y="437"/>    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="10" name="strategy"/>      
-      <multiplicity id="11" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="5" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <realization id="12">    
-    <end type="SOURCE" refId="3"/>    
-    <end type="TARGET" refId="5"/>  
-  </realization>  
-  <dependency id="13">    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="6"/>  
-  </dependency>  
-  <realization id="14">    
-    <end type="SOURCE" refId="6"/>    
-    <end type="TARGET" refId="5"/>  
-  </realization>  
-  <dependency id="15">    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="3"/>  
-  </dependency>  
-  <association id="16">    
-    <bendpoint x="493" y="666"/>    
-    <end type="SOURCE" refId="3" navigable="false">      
-      <attribute id="17" name="history"/>      
-      <multiplicity id="18" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="4" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="19">    
-    <end type="SOURCE" refId="1"/>    
-    <end type="TARGET" refId="6"/>  
-  </dependency>  
-  <association id="20">    
+  <association id="8">    
     <bendpoint x="182" y="437"/>    
     <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="21" name="strategies"/>      
-      <multiplicity id="22" minimum="0" maximum="2147483647"/>    
+      <attribute id="9" name="strategies">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="10" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
     </end>    
     <end type="TARGET" refId="5" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="23">    
-    <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="24" name="templates"/>      
-      <multiplicity id="25" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="4" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="26">    
+  <dependency id="11">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <dependency id="12">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <dependency id="13">    
     <end type="SOURCE" refId="5"/>    
     <end type="TARGET" refId="4"/>  
   </dependency>  
-  <dependency id="27">    
+  <association id="14">    
+    <bendpoint x="703" y="437"/>    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="15" name="strategy">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="16" minimum="0" maximum="1">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="17">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="5"/>  
+  </realization>  
+  <association id="18">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="19" name="templates">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="20" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="21">    
     <bendpoint x="222" y="666"/>    
     <end type="SOURCE" refId="6"/>    
     <end type="TARGET" refId="4"/>  
   </dependency>  
-  <dependency id="28">    
+  <association id="22">    
+    <bendpoint x="493" y="666"/>    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="23" name="history">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="24" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="25">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="6"/>  
+  </dependency>  
+  <dependency id="26">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="6"/>  
+  </dependency>  
+  <dependency id="27">    
     <bendpoint x="724" y="437"/>    
     <bendpoint x="724" y="666"/>    
     <end type="SOURCE" refId="2"/>    
     <end type="TARGET" refId="4"/>  
   </dependency>  
+  <realization id="28">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="5"/>  
+  </realization>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
     <attributes public="true" package="true" protected="true" private="true" static="true"/>    

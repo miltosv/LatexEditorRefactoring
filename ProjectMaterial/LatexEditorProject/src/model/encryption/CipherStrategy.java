@@ -1,4 +1,4 @@
-package model.strategies;
+package model.encryption;
 
 public interface CipherStrategy {
 

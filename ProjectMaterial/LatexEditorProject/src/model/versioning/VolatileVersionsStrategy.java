@@ -1,4 +1,4 @@
-package model.strategies;
+package model.versioning;
 
 import java.util.ArrayList;
 import java.util.List;

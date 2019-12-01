@@ -24,6 +24,10 @@ public class MainWindow {
 	private JEditorPane editorPane = new JEditorPane();
 	private LatexEditorView latexEditorView;
 	
+	
+	
+	
+	
 	public void editContents(String type) {
 		String contents = editorPane.getText();
 		String before = contents.substring(0, editorPane.getCaretPosition());
@@ -80,6 +84,7 @@ public class MainWindow {
 		latexEditorView.getController().enact("addLatex");
 		editorPane.setText(contents);
 	}
+	
 	/**
 	 * Launch the application.
 	 */
@@ -320,4 +325,6 @@ public class MainWindow {
 		
 		editorPane.setText(latexEditorView.getCurrentDocument().getContents());
 	}
+
+
 }

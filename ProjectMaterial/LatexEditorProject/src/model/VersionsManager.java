@@ -2,9 +2,9 @@ package model;
 
 import javax.swing.JOptionPane;
 
-import model.strategies.StableVersionsStrategy;
-import model.strategies.VersionsStrategy;
-import model.strategies.VolatileVersionsStrategy;
+import model.versioning.StableVersionsStrategy;
+import model.versioning.VersionsStrategy;
+import model.versioning.VolatileVersionsStrategy;
 import view.LatexEditorView;
 
 public class VersionsManager {

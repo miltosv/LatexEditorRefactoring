@@ -1,4 +1,4 @@
-package model.strategies;
+package model.encryption;
 
 import java.util.HashMap;
 
@@ -20,7 +20,7 @@ public class CipherManager {
 	}
 	
 	
-	// not sure how to set the 'current' cipher strategy
+	//TODO not sure how to set the 'current' cipher strategy
 	public CipherStrategy getCipherStrategy() {
 		return cipherStrategy;
 	}
