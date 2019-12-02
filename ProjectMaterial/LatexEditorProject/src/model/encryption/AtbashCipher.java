@@ -1,4 +1,5 @@
-package model.encryption;
+package model.strategies;
+
 
 
 public class AtbashCipher implements CipherStrategy {
