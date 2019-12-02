@@ -32,7 +32,7 @@ public class MainWindow {
 		String contents = editorPane.getText();
 		String before = contents.substring(0, editorPane.getCaretPosition());
 		String after = contents.substring(editorPane.getCaretPosition());
-		
+		/*
 		if(type.equals("chapter")) {
 			contents = before + "\n\\chapter{...}"+"\n"+after;
 		}
@@ -79,10 +79,12 @@ public class MainWindow {
 					"\\caption{....}\\label{...}\n"+
 					"\\end{figure}\n"+after;
 ;
-		}
-		latexEditorView.setText(contents);
+		}*/
+		
 		// TODO clean this.
 		latexEditorView.getController().enact(new String []{"addLatex",before,after,type});
+		//latexEditorView.getVersionsManager().saveContents();
+		latexEditorView.setText(contents);
 		editorPane.setText(contents);
 	}
 	
