@@ -12,7 +12,7 @@ public class DisableVersionsManagementCommand implements Command {
 	}
 
 	@Override
-	public void execute() {
+	public void execute(String args []) {
 		// TODO Auto-generated method stub
 		versionsManager.disable();
 	}

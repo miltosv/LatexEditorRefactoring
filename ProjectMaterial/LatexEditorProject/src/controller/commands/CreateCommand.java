@@ -15,7 +15,7 @@ public class CreateCommand implements Command {
 	}
 
 	@Override
-	public void execute() {
+	public void execute(String [] args) {
 		// TODO Auto-generated method stub
 		String type = versionsManager.getType();
 		Document document = documentManager.createDocument(type);

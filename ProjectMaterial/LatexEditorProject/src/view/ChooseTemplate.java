@@ -107,7 +107,7 @@ public class ChooseTemplate {
 					latexEditorView.setType("emptyTemplate");
 				}
 
-				latexEditorView.getController().enact("create");
+				latexEditorView.getController().enact(new String []{"create"});
 				MainWindow mainWindow = new MainWindow(latexEditorView);
 				frame.dispose();
 			}
