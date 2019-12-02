@@ -81,7 +81,8 @@ public class MainWindow {
 ;
 		}
 		latexEditorView.setText(contents);
-		latexEditorView.getController().enact(new String []{"addLatex"});
+		// TODO clean this.
+		latexEditorView.getController().enact(new String []{"addLatex",before,after,type});
 		editorPane.setText(contents);
 	}
 	
