@@ -9,7 +9,7 @@ public class CreateCommand implements Command {
 	private VersionsManager versionsManager;
 	
 	public CreateCommand(DocumentManager documentManager, VersionsManager versionsManager) {
-		super();
+		
 		this.documentManager = documentManager;
 		this.versionsManager = versionsManager;
 	}

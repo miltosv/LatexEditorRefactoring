@@ -19,14 +19,22 @@ import controller.commands.LoadCommand;
 import controller.commands.RollbackToPreviousVersionCommand;
 import controller.commands.SaveCommand;
 import model.Document;
+import model.DocumentManager;
 import model.VersionsManager;
+import view.LatexEditorView;
+import view.MainWindow;
 
 public class LatexEditorController{
 	private HashMap<String, Command> commands;
 	private VersionsManager versionsManager;
+	private DocumentManager documentManager;
+	private MainWindow mainWindow;
+	private LatexEditorView editorView;
 	
-	public LatexEditorController(VersionsManager versionsManager) {
-		CommandFactory commandFactory = new CommandFactory(versionsManager);
+	public LatexEditorController(VersionsManager versionsManager,LatexEditorView latexView) {
+		//CommandFactory commandFactory = new CommandFactory(versionsManager);
+		editorView=latexView;
+		mainWindow=editorView.getMainWindow();
 		this.versionsManager=versionsManager;
 		commands = new HashMap<String, Command>(); 
 		this.dynamicallyCreateCommands("src\\resources\\settings\\commands");
@@ -34,7 +42,7 @@ public class LatexEditorController{
 	}
 	private void dynamicallyCreateCommands(String PropertiesFilePath){
 		
-		CommandFactory commandFactory = new CommandFactory(versionsManager);
+		CommandFactory commandFactory = new CommandFactory(versionsManager,mainWindow,editorView);
 		try {
 			BufferedReader CommandsSpecsReader = new BufferedReader(
 					new FileReader (PropertiesFilePath)

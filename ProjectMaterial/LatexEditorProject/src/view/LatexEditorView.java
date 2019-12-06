@@ -16,6 +16,16 @@ public class LatexEditorView {
 	private String filename;
 	private String strategy;
 	private VersionsManager versionsManager;
+	private MainWindow mainWindow;
+//TODO changed this	
+	public MainWindow createMainwindow() {
+		mainWindow=new MainWindow(this);
+		return this.getMainWindow();
+	}
+	
+	public MainWindow getMainWindow() {
+		return mainWindow;
+	}
 	
 	public VersionsManager getVersionsManager() {
 		return versionsManager;
@@ -73,34 +83,8 @@ public class LatexEditorView {
 	}
 	public void loadFromFile() {
 		// TODO Auto-generated method stub
-		String fileContents = "";
-		try {
-			Scanner scanner = new Scanner(new FileInputStream(filename));
-			while(scanner.hasNextLine()) {
-				fileContents = fileContents + scanner.nextLine() + "\n";
-			}
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		currentDocument = new Document();
-		currentDocument.setContents(fileContents);
+		controller.enact("load");
 		
-		type = "emptyTemplate";
-		
-		fileContents = fileContents.trim();
-		if(fileContents.startsWith("\\documentclass[11pt,twocolumn,a4paper]{article}")) {
-			type = "articleTemplate";
-		}
-		else if(fileContents.startsWith("\\documentclass[11pt,a4paper]{book}")) {
-			type = "bookTemplate";
-		}
-		else if(fileContents.startsWith("\\documentclass[11pt,a4paper]{report}")) {
-			type = "reportTemplate";
-		}
-		else if(fileContents.startsWith("\\documentclass{letter}")) {
-			type = "letterTemplate";
-		}
 	}
 	
 }
