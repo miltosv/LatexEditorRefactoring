@@ -79,13 +79,9 @@ public class MainWindow {
 					"\\caption{....}\\label{...}\n"+
 					"\\end{figure}\n"+after;
 ;
-		}*/
-		
-		// TODO clean this.
-		latexEditorView.getController().enact(new String []{"addLatex",before,after,type});
-		//latexEditorView.getVersionsManager().saveContents();
+		}
 		latexEditorView.setText(contents);
-		latexEditorView.getController().enact("addLatex");
+		latexEditorView.getController().enact(new String []{"addLatex"});
 		editorPane.setText(contents);
 	}
 	
