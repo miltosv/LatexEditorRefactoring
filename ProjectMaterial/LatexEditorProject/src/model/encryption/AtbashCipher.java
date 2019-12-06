@@ -1,4 +1,4 @@
-package model.encryption;
+package model.strategies;
 
 
 

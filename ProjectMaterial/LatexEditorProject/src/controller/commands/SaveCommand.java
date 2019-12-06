@@ -10,7 +10,7 @@ public class SaveCommand implements Command {
 		this.versionsManager = versionsManager;
 	}
 	@Override
-	public void execute(String args []) {
+	public void execute() {
 		// TODO Auto-generated method stub
 		versionsManager.saveToFile();
 	}

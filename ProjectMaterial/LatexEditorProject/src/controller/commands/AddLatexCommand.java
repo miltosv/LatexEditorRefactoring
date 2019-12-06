@@ -49,15 +49,8 @@ public class AddLatexCommand implements Command  {
 	
 
 	@Override
-	public void execute(String [] args) {
-	
-		String documentContents;
-		String before = args[1];
-		String after = args[2];
-		String typeOfLatexCommand = args[3];
-		
-		documentContents = before + latexCommands.get(typeOfLatexCommand) + after;
-		// TODO give the documentContents to current Document 
+	public void execute() {
+		// TODO Auto-generated method stub
 		versionsManager.saveContents();
 	}
 

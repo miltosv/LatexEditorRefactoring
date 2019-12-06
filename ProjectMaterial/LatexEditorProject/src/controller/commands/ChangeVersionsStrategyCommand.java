@@ -11,7 +11,7 @@ public class ChangeVersionsStrategyCommand implements Command {
 	}
 
 	@Override
-	public void execute(String args[]) {
+	public void execute() {
 		// TODO Auto-generated method stub
 		versionsManager.changeStrategy();
 	}
