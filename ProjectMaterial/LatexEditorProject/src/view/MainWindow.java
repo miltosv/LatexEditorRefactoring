@@ -17,79 +17,40 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JScrollPane;
 import javax.swing.JCheckBoxMenuItem;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 public class MainWindow {
 
 	private JFrame frame;
 	private JEditorPane editorPane = new JEditorPane();
 	private LatexEditorView latexEditorView;
+	private String currentCommand;
 	
 	
-	
-	
+public int getCaret() {
+	return editorPane.getCaretPosition();
+}
 	
 	public void editContents(String type) {
-		String contents = editorPane.getText();
-		String before = contents.substring(0, editorPane.getCaretPosition());
-		String after = contents.substring(editorPane.getCaretPosition());
+		currentCommand=type;
 		
-		if(type.equals("chapter")) {
-			contents = before + "\n\\chapter{...}"+"\n"+after;
-		}
-		else if(type.equals("section")) {
-			contents = before + "\n\\section{...}"+"\n"+after;
-		}
-		else if(type.equals("subsection")) {
-			contents = before + "\n\\subsection{...}"+"\n"+after;
-		}
-		else if(type.equals("subsubsection")) {
-			contents = before + "\n\\subsubsection{...}"+"\n"+after;
-		}
-		else if(type.equals("enumerate")) {
-			contents = before + 
-					"\\begin{enumerate}\n"+
-					"\\item ...\n"+
-					"\\item ...\n"+
-					"\\end{enumerate}\n"+after;
-		}
-		else if(type.equals("itemize")) {
-			contents = before + 
-					"\\begin{itemize}\n"+
-					"\\item ...\n"+
-					"\\item ...\n"+
-					"\\end{itemize}\n"+after;
-		}
-		else if(type.equals("table")) {
-			contents = before + 
-					"\\begin{table}\n"+
-					"\\caption{....}\\label{...}\n"+
-					"\\begin{tabular}{|c|c|c|}\n"+
-					"\\hline\n"+
-					"... &...&...\\\\\n"+
-					"... &...&...\\\\\n"+
-					"... &...&...\\\\\n"+
-					"\\hline\n"+
-					"\\end{tabular}\n"+
-					"\\end{table}\n"+after;
-		}
-		else if(type.equals("figure")) {
-			contents = before + 
-					"\\begin{figure}\n"+
-					"\\includegraphics[width=...,height=...]{...}\n"+
-					"\\caption{....}\\label{...}\n"+
-					"\\end{figure}\n"+after;
-;
-		}
-		latexEditorView.setText(contents);
 		latexEditorView.getController().enact("addLatex");
-		editorPane.setText(contents);
+		editorPane.setText(latexEditorView.getCurrentDocument().getContents());
 	}
 	
+	public String getPaneText() {
+		return editorPane.getText();
+	}
 	
 	/**
 	 * Launch the application.
 	 */
 	
+
+	public String getCurrentCommand() {
+		return currentCommand;
+	}
 
 	/**
 	 * Create the application.
@@ -129,7 +90,7 @@ public class MainWindow {
 		JMenuItem mntmSave = new JMenuItem("Save");
 		mntmSave.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				latexEditorView.setText(editorPane.getText());
+				//latexEditorView.setText(editorPane.getText());
 				latexEditorView.getController().enact("edit");
 			}
 		});
@@ -179,6 +140,11 @@ public class MainWindow {
 		mnFile.add(mntmSaveFile);
 		
 		JMenuItem mntmExit = new JMenuItem("Exit");
+		mntmExit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.exit(0);
+			}
+		});
 		mnFile.add(mntmExit);
 		
 		
@@ -317,12 +283,23 @@ public class MainWindow {
 				editorPane.setText(doc.getContents());
 			}
 		});
+		
 		mnStrategy.add(mntmRollback);
+		
+		editorPane.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent e) {
+				latexEditorView.getController().enact("edit");
+			}
+		});
+		
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(10, 39, 783, 467);
 		frame.getContentPane().add(scrollPane);
+		editorPane.setEditable(true);
 		scrollPane.setViewportView(editorPane);
+		
 		
 		editorPane.setText(latexEditorView.getCurrentDocument().getContents());
 	}

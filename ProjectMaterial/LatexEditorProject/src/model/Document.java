@@ -49,7 +49,7 @@ public class Document {
 	}
 	
 	public Document clone() {
-		return new Document(author, date, copyright, versionID, contents);
+		return new Document(author, date, copyright, versionID,new String (contents));
 	}
 
 	public void changeVersion() {

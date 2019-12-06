@@ -1,18 +1,18 @@
 package controller.commands;
 
 import model.VersionsManager;
+import view.LatexEditorView;
 
 public class SaveCommand implements Command {
-	private VersionsManager versionsManager;
+	private LatexEditorView editorView;
 	
-	public SaveCommand(VersionsManager versionsManager) {
-		// TODO Auto-generated constructor stub
-		this.versionsManager = versionsManager;
+	public SaveCommand(LatexEditorView v) {
+		editorView=v;
 	}
 	@Override
 	public void execute() {
-		// TODO Auto-generated method stub
-		versionsManager.saveToFile();
+		
+		editorView.getCurrentDocument().save(editorView.getFilename());
 	}
 
 }

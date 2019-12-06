@@ -47,14 +47,13 @@ public class VersionsManager {
 
 	public void saveContents() {
 		
-		latexEditorView.saveContents();
+		if (this.isEnabled()){
+			this.putVersion(latexEditorView.getCurrentDocument());
+			latexEditorView.getCurrentDocument().changeVersion();
+		}
 	}
 
-	public void saveToFile() {
-		
-		latexEditorView.saveToFile();
-	}
-
+	
 	public void loadFromFile() {
 		
 		latexEditorView.loadFromFile();
@@ -103,7 +102,7 @@ public class VersionsManager {
 
 	public void  putVersion(Document document) {
 	
-		strategy.putVersion(document);
+		strategy.putVersion(document.clone());
 	}
 
 	public void rollback() {

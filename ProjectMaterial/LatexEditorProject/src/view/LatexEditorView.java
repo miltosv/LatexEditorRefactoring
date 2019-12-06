@@ -12,7 +12,7 @@ public class LatexEditorView {
 	private LatexEditorController controller;
 	private Document currentDocument;
 	private String type;
-	private String text;
+//	private String text;
 	private String filename;
 	private String strategy;
 	private VersionsManager versionsManager;
@@ -39,12 +39,13 @@ public class LatexEditorView {
 	public void setStrategy(String strategy) {
 		this.strategy = strategy;
 	}
+	/*
 	public String getText() {
 		return text;
 	}
 	public void setText(String text) {
 		this.text = text;
-	}
+	}*/
 	public LatexEditorController getController() {
 		return controller;
 	}
@@ -63,6 +64,7 @@ public class LatexEditorView {
 	public void setType(String type) {
 		this.type = type;
 	}
+	/*
 	public void saveContents() {
 		// TODO Auto-generated method stub
 		if(versionsManager.isEnabled()) {
@@ -70,11 +72,13 @@ public class LatexEditorView {
 			currentDocument.changeVersion();
 		}
 		currentDocument.setContents(text);
-	}
+	}*/
+	
+	/*
 	public void saveToFile() {
 		// TODO Auto-generated method stub
 		currentDocument.save(filename);
-	}
+	}*/
 	public String getFilename() {
 		return filename;
 	}
