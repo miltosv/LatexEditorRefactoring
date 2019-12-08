@@ -28,9 +28,9 @@ public class MainWindow {
 	private String currentCommand;
 	
 	
-public int getCaret() {
-	return editorPane.getCaretPosition();
-}
+	public int getCaret() {
+		return editorPane.getCaretPosition();
+	}
 	
 	public void editContents(String type) {
 		currentCommand=type;
@@ -81,7 +81,7 @@ public int getCaret() {
 		JMenuItem mntmNewFile = new JMenuItem("New file");
 		mntmNewFile.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				ChooseTemplate chooseTemplate = new ChooseTemplate(latexEditorView, "main");
+				ChooseTemplate chooseTemplate = new ChooseTemplate(latexEditorView, latexEditorView.getController(), "main");
 				frame.dispose();
 			}
 		});
