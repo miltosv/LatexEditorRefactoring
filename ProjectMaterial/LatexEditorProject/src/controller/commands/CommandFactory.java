@@ -44,13 +44,13 @@ public class CommandFactory {
 			return new EnableVersionsManagementCommand(versionsManager);
 		}
 		if(type.equals("load")) {
-			return new LoadCommand(versionsManager,editorView,editorController);
+			return new LoadCommand(versionsManager,editorView, editorController);
 		}
 		if(type.equals("rollbackToPreviousVersion")) {
 			return new RollbackToPreviousVersionCommand(versionsManager);
 		}
 		if(type.equals("save")) {
-			return new SaveCommand(editorView);
+			return new SaveCommand(editorView, editorController);
 		}
 		return null;
 	}

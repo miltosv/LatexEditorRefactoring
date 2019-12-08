@@ -35,7 +35,7 @@ public class LoadCommand implements Command {
 		
 		String fileContents = "";
 		try {
-			Scanner scanner = new Scanner(new FileInputStream(editorView.getFilename()));
+			Scanner scanner = new Scanner(new FileInputStream(editorController.getFilePathName()));
 			while(scanner.hasNextLine()) {
 				fileContents = fileContents + scanner.nextLine() + "\n";
 			}

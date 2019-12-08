@@ -14,6 +14,8 @@ import view.MainWindow;
 public class LatexEditorController{
 	private HashMap<String, Command> commands;
 	private String typeOfDocument;
+	private String filePathName;
+	
 	
 	private VersionsManager versionsManager;
 	private DocumentManager documentManager;
@@ -74,6 +76,12 @@ public class LatexEditorController{
 	}
 	public void setTypeOfDocument(String type) {
 		this.typeOfDocument = type;
+	}
+	public String getFilePathName() {
+		return filePathName;
+	}
+	public void setFilePathName(String filePathName) {
+		this.filePathName = filePathName;
 	}
 	
 	
