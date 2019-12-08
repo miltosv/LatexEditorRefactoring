@@ -1,9 +1,5 @@
 package view;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-
 import controller.LatexEditorController;
 import model.Document;
 import model.VersionsManager;
@@ -18,9 +14,15 @@ public class LatexEditorView {
 	private VersionsManager versionsManager;
 	private MainWindow mainWindow;
 //TODO changed this	
-	public MainWindow createMainwindow() {
+	
+	
+	public LatexEditorView() {
+	//	controller=new LatexEditorController(versionsManager,this);
+	}
+	
+	public void createMainwindow() {
 		mainWindow=new MainWindow(this);
-		return this.getMainWindow();
+		
 	}
 	
 	public MainWindow getMainWindow() {
@@ -66,7 +68,7 @@ public class LatexEditorView {
 	}
 	/*
 	public void saveContents() {
-		// TODO Auto-generated method stub
+		
 		if(versionsManager.isEnabled()) {
 			versionsManager.putVersion(currentDocument);
 			currentDocument.changeVersion();
@@ -85,10 +87,12 @@ public class LatexEditorView {
 	public void setFilename(String filename) {
 		this.filename = filename;
 	}
+	
+	/*
 	public void loadFromFile() {
 		// TODO Auto-generated method stub
 		controller.enact("load");
 		
-	}
+	}*/
 	
 }

@@ -300,9 +300,13 @@ public int getCaret() {
 		editorPane.setEditable(true);
 		scrollPane.setViewportView(editorPane);
 		
-		
+//		System.out.println(latexEditorView.getCurrentDocument().getContents());
 		editorPane.setText(latexEditorView.getCurrentDocument().getContents());
 	}
 
+	public void update() {
+		editorPane.setText(latexEditorView.getCurrentDocument().getContents());
+		System.out.println(latexEditorView.getCurrentDocument().getContents());
+	}
 
 }

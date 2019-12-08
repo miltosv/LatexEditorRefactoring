@@ -4,6 +4,7 @@ import javax.swing.JOptionPane;
 
 import model.versioning.StableVersionsStrategy;
 import model.versioning.VersionsStrategy;
+import model.versioning.VersionsStrategyFactory;
 import model.versioning.VolatileVersionsStrategy;
 import view.LatexEditorView;
 
@@ -13,8 +14,8 @@ public class VersionsManager {
 	private LatexEditorView latexEditorView;
 
 	
-	public VersionsManager(VersionsStrategy versionsStrategy, LatexEditorView latexEditorView) {
-		this.strategy = versionsStrategy;
+	public VersionsManager(LatexEditorView latexEditorView) {
+		this.strategy = new VersionsStrategyFactory().createStrategy("volatileStrategy");
 		this.latexEditorView = latexEditorView;
 	}
 	
@@ -53,12 +54,12 @@ public class VersionsManager {
 		}
 	}
 
-	
+	/*
 	public void loadFromFile() {
 		
 		latexEditorView.loadFromFile();
 	}
-
+*/
 	public void enableStrategy() {
 		
 		String strategyType = latexEditorView.getStrategy();
