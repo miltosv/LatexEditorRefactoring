@@ -26,7 +26,7 @@ public class CommandFactory {
 
 	public Command createCommand(String type) {
 		if(type.equals("addLatex")) {
-			return new AddLatexCommand(versionsManager,editorView);
+			return new AddLatexCommand(versionsManager,editorView , editorController);
 		}
 		if(type.equals("changeVersionsStrategy")) {
 			return new ChangeVersionsStrategyCommand(versionsManager);
@@ -38,7 +38,7 @@ public class CommandFactory {
 			return new DisableVersionsManagementCommand(versionsManager);
 		}
 		if(type.equals("edit")) {
-			return new EditCommand(versionsManager,editorView);
+			return new EditCommand(versionsManager,editorView, editorController);
 		}
 		if(type.equals("enableVersionsManagement")) {
 			return new EnableVersionsManagementCommand(versionsManager);

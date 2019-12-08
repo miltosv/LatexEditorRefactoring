@@ -7,21 +7,24 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.HashMap;
 
+import controller.LatexEditorController;
 import model.VersionsManager;
 import view.LatexEditorView;
 
 public class AddLatexCommand implements Command  {
 	private VersionsManager versionsManager;
 	private LatexEditorView editorView;
+	private LatexEditorController editorController;
 	private HashMap<String, String> latexCommands;
 	private static final int ID=0;
 	private static final int CONTENTS=1;
 	private static final String LatexCommandFilePath ="src/resources/settings/latexCommands";
 	
 	
-	public AddLatexCommand(VersionsManager versionsManager,LatexEditorView view) {
+	public AddLatexCommand(VersionsManager versionsManager,LatexEditorView view, LatexEditorController editorController) {
 		editorView= view;
 		this.versionsManager = versionsManager;
+		this.editorController = editorController;
 		latexCommands = new HashMap<String,String>();
 		this.dynamicallyCreateLatexCommands();
 		
@@ -53,7 +56,7 @@ public class AddLatexCommand implements Command  {
 	@Override
 	public void execute() {
 		int caretPosition=editorView.getMainWindow().getCaret();
-		String contents=new String(editorView.getCurrentDocument().getContents());
+		String contents=new String(editorController.getCurrentDocument().getContents());
 		String command=editorView.getMainWindow().getCurrentCommand();
 		
 		
@@ -64,7 +67,7 @@ public class AddLatexCommand implements Command  {
 		builder.insert((caretPosition),latexCommands.get(command));
 		String documentContents = (builder.toString());
 		
-		editorView.getCurrentDocument().setContents(documentContents);
+		editorController.getCurrentDocument().setContents(documentContents);
 		versionsManager.saveContents();
 	}
 

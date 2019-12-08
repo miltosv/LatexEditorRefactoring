@@ -63,7 +63,7 @@ public class LoadCommand implements Command {
 		
 		editorController.setTypeOfDocument(type);
 		//editorView.setType(type);
-		editorView.setCurrentDocument(currentDocument);
+		editorController.setCurrentDocument(currentDocument);
 		//versionsManager.loadFromFile();
 	}
 

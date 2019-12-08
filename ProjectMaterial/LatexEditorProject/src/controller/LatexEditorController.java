@@ -6,6 +6,7 @@ import java.util.HashMap;
 
 import controller.commands.Command;
 import controller.commands.CommandFactory;
+import model.Document;
 import model.DocumentManager;
 import model.VersionsManager;
 import view.LatexEditorView;
@@ -15,6 +16,7 @@ public class LatexEditorController{
 	private HashMap<String, Command> commands;
 	private String typeOfDocument;
 	private String filePathName;
+	private Document currentDocument;
 	
 	
 	private VersionsManager versionsManager;
@@ -29,7 +31,7 @@ public class LatexEditorController{
 		mainWindow = editorView.getMainWindow();
 		
 	
-		versionsManager= new VersionsManager(editorView);
+		versionsManager= new VersionsManager(editorView , this);
 		
 		
 		commands = new HashMap<String, Command>(); 
@@ -82,6 +84,13 @@ public class LatexEditorController{
 	}
 	public void setFilePathName(String filePathName) {
 		this.filePathName = filePathName;
+	}
+	
+	public Document getCurrentDocument() {
+		return currentDocument;
+	}
+	public void setCurrentDocument(Document currentDocument) {
+		this.currentDocument = currentDocument;
 	}
 	
 	

@@ -15,7 +15,7 @@ public class SaveCommand implements Command {
 	@Override
 	public void execute() {
 		
-		editorView.getCurrentDocument().save(editorController.getFilePathName());
+		editorController.getCurrentDocument().save(editorController.getFilePathName());
 	}
 
 }

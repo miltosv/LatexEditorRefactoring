@@ -2,6 +2,7 @@ package model;
 
 import javax.swing.JOptionPane;
 
+import controller.LatexEditorController;
 import model.versioning.StableVersionsStrategy;
 import model.versioning.VersionsStrategy;
 import model.versioning.VersionsStrategyFactory;
@@ -12,11 +13,13 @@ public class VersionsManager {
 	private boolean enabled;
 	private VersionsStrategy strategy;
 	private LatexEditorView latexEditorView;
+	private LatexEditorController editorController;
 	private String strategyType;
 
 	
-	public VersionsManager( LatexEditorView latexEditorView) {
+	public VersionsManager( LatexEditorView latexEditorView , LatexEditorController editorController) {
 		this.strategy = new VersionsStrategyFactory().createStrategy("volatileStrategy");
+		this.editorController = editorController;
 		strategyType = "volatile";
 		this.latexEditorView = latexEditorView;
 	}
@@ -45,15 +48,15 @@ public class VersionsManager {
 	}
 	
 	public void setCurrentVersion(Document document) {
-		latexEditorView.setCurrentDocument(document);
+		editorController.setCurrentDocument(document);
 	}
 	
 
 	public void saveContents() {
 		
 		if (this.isEnabled()){
-			this.putVersion(latexEditorView.getCurrentDocument());
-			latexEditorView.getCurrentDocument().changeVersion();
+			this.putVersion(editorController.getCurrentDocument());
+			editorController.getCurrentDocument().changeVersion();
 		}
 	}
 
@@ -121,7 +124,7 @@ public class VersionsManager {
 			}
 			else {
 				strategy.removeVersion();
-				latexEditorView.setCurrentDocument(doc);
+				editorController.setCurrentDocument(doc);
 			}
 		}
 		
