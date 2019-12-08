@@ -25,7 +25,6 @@ public class MainWindow {
 
 	private JFrame frame;
 	private JEditorPane editorPane = new JEditorPane();
-	private LatexEditorView latexEditorView;
 	private LatexEditorController editorController;
 	private String currentCommand;
 	
@@ -56,12 +55,10 @@ public class MainWindow {
 
 	/**
 	 * Create the application.
-	 * @param latexEditorView 
+	 *
 	 */
-	public MainWindow(LatexEditorView latexEditorView, LatexEditorController editorController) {
+	public MainWindow(LatexEditorController editorController) {
 		System.out.println("MainWindow here");
-		this.latexEditorView = latexEditorView;
-		
 
 		this.editorController = editorController;
 		System.out.println("MainWindow here");
@@ -95,7 +92,7 @@ public class MainWindow {
 		JMenuItem mntmNewFile = new JMenuItem("New file");
 		mntmNewFile.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				ChooseTemplate chooseTemplate = new ChooseTemplate(latexEditorView,editorController, "main");
+				ChooseTemplate chooseTemplate = new ChooseTemplate(editorController, "main");
 				frame.dispose();
 			}
 		});

@@ -7,16 +7,15 @@ import java.util.Scanner;
 import controller.LatexEditorController;
 import model.Document;
 import model.VersionsManager;
-import view.LatexEditorView;
+
 
 public class LoadCommand implements Command {
 	private VersionsManager versionsManager;
-	private LatexEditorView editorView;
 	private LatexEditorController editorController;
 	
 	
-	public LoadCommand(VersionsManager versionsManager,LatexEditorView view,LatexEditorController editorController) {
-		editorView=view;
+	public LoadCommand(VersionsManager versionsManager, LatexEditorController editorController) {
+
 		this.versionsManager = versionsManager;
 		this.editorController = editorController;
 	}

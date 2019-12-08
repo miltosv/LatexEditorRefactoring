@@ -9,7 +9,6 @@ import controller.commands.CommandFactory;
 import model.Document;
 import model.DocumentManager;
 import model.VersionsManager;
-import view.LatexEditorView;
 import view.MainWindow;
 
 public class LatexEditorController{
@@ -22,17 +21,16 @@ public class LatexEditorController{
 	private VersionsManager versionsManager;
 	private DocumentManager documentManager;
 	private MainWindow mainWindow;
-	private LatexEditorView editorView;
 	
-	public LatexEditorController(LatexEditorView latexView) {
+	
+	public LatexEditorController() {
 
-		editorView = latexView;
 		
 		//mainWindow = editorView.getMainWindow();
 		System.out.println("Controller here");
-		mainWindow = new MainWindow(editorView,this); 
+		mainWindow = new MainWindow(this); 
 		
-		versionsManager= new VersionsManager(editorView , this);
+		versionsManager= new VersionsManager(this);
 		
 		
 		commands = new HashMap<String, Command>(); 
@@ -43,7 +41,7 @@ public class LatexEditorController{
 	
 	private void dynamicallyCreateCommands(String PropertiesFilePath){
 		
-		CommandFactory commandFactory = new CommandFactory(versionsManager,mainWindow,editorView,this);
+		CommandFactory commandFactory = new CommandFactory(versionsManager,mainWindow,this);
 		try {
 			BufferedReader CommandsSpecsReader = new BufferedReader(
 					new FileReader (PropertiesFilePath)
