@@ -97,19 +97,23 @@ public class ChooseTemplate {
 		btnCreate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if(book.isSelected()) {
-					latexEditorView.setType("bookTemplate");
+					editorController.setTypeOfDocument("bookTemplate");
 				}
 				else if(report.isSelected()) {
-					latexEditorView.setType("reportTemplate");
+					//latexEditorView.setType("reportTemplate");
+					editorController.setTypeOfDocument("reportTemplate");
 				}
 				else if(article.isSelected()) {
-					latexEditorView.setType("articleTemplate");
+					//latexEditorView.setType("articleTemplate");
+					editorController.setTypeOfDocument("articleTemplate");
 				}
 				else if(letter.isSelected()) {
-					latexEditorView.setType("letterTemplate");
+					//latexEditorView.setType("letterTemplate");
+					editorController.setTypeOfDocument("letterTemplate");
 				}
 				else {
-					latexEditorView.setType("emptyTemplate");
+					//latexEditorView.setType("emptyTemplate");
+					editorController.setTypeOfDocument("emptyTemplate");
 				}
 
 				editorController.enact("create");

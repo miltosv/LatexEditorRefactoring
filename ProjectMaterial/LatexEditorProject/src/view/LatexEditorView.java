@@ -28,6 +28,12 @@ public class LatexEditorView {
 	public MainWindow getMainWindow() {
 		return mainWindow;
 	}
+	
+	
+	
+	public void setController(LatexEditorController controller) {
+		this.controller = controller;
+	}
 	/*
 	public VersionsManager getVersionsManager() {
 		return versionsManager;
@@ -52,25 +58,20 @@ public class LatexEditorView {
 	public void setText(String text) {
 		this.text = text;
 	}*/
+	/*public LatexEditorController getController() {
+		return controller;
+	}*/
+	
 
-	
-	
-	
-	public void setController(LatexEditorController controller) {
-		this.controller = controller;
-	}
 	public Document getCurrentDocument() {
 		return currentDocument;
 	}
 	public void setCurrentDocument(Document currentDocument) {
 		this.currentDocument = currentDocument;
 	}
-	public String getType() {
-		return type;
-	}
-	public void setType(String type) {
-		this.type = type;
-	}
+
+	
+	
 	/*
 	public void saveContents() {
 		
