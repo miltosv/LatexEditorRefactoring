@@ -48,12 +48,6 @@ public class VersionsManager {
 		latexEditorView.setCurrentDocument(document);
 	}
 	
-	
-//TODO delegate Remove
-	public String getType() {
-		
-		return latexEditorView.getType();
-	}
 
 	public void saveContents() {
 		

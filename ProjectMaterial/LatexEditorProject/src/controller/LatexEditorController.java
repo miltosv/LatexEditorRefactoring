@@ -13,6 +13,8 @@ import view.MainWindow;
 
 public class LatexEditorController{
 	private HashMap<String, Command> commands;
+	private String typeOfDocument;
+	
 	private VersionsManager versionsManager;
 	private DocumentManager documentManager;
 	private MainWindow mainWindow;
@@ -34,7 +36,7 @@ public class LatexEditorController{
 	}
 	private void dynamicallyCreateCommands(String PropertiesFilePath){
 		
-		CommandFactory commandFactory = new CommandFactory(versionsManager,mainWindow,editorView);
+		CommandFactory commandFactory = new CommandFactory(versionsManager,mainWindow,editorView,this);
 		try {
 			BufferedReader CommandsSpecsReader = new BufferedReader(
 					new FileReader (PropertiesFilePath)
@@ -66,6 +68,15 @@ public class LatexEditorController{
 	public void setVersionsManager(VersionsManager versionsManager) {
 		this.versionsManager = versionsManager;
 	}
+	
+	public String getTypeOfDocument() {
+		return typeOfDocument;
+	}
+	public void setTypeOfDocument(String type) {
+		this.typeOfDocument = type;
+	}
+	
+	
 	
 	
 }

@@ -112,10 +112,10 @@ public class MainWindow {
 					editorController.enact("load");
 					mnCommands.setEnabled(true);
 					addChapter.setEnabled(true);
-					if(latexEditorView.getType().equals("letterTemplate")) {
+					if(editorController.getTypeOfDocument().equals("letterTemplate")) {
 						mnCommands.setEnabled(false);
 					}
-					if(latexEditorView.getType().equals("articleTemplate")) {
+					if(editorController.getTypeOfDocument().equals("articleTemplate")) {
 						addChapter.setEnabled(false);
 					}
 					editorPane.setText(latexEditorView.getCurrentDocument().getContents());
@@ -152,7 +152,7 @@ public class MainWindow {
 		
 		
 		menuBar.add(mnCommands);
-		if(latexEditorView.getType().equals("letterTemplate")) {
+		if(editorController.getTypeOfDocument().equals("letterTemplate")) {
 			mnCommands.setEnabled(false);
 		}
 		
@@ -162,7 +162,7 @@ public class MainWindow {
 			}
 		});
 		mnCommands.add(addChapter);
-		if(latexEditorView.getType().equals("articleTemplate")) {
+		if(editorController.getTypeOfDocument().equals("articleTemplate")) {
 			addChapter.setEnabled(false);
 		}
 		
@@ -294,6 +294,7 @@ public class MainWindow {
 		editorPane.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent e) {
+				
 				editorController.enact("edit");
 			}
 		});
