@@ -7,21 +7,20 @@ import model.versioning.StableVersionsStrategy;
 import model.versioning.VersionsStrategy;
 import model.versioning.VersionsStrategyFactory;
 import model.versioning.VolatileVersionsStrategy;
-import view.LatexEditorView;
+
 
 public class VersionsManager {
 	private boolean enabled;
 	private VersionsStrategy strategy;
-	private LatexEditorView latexEditorView;
 	private LatexEditorController editorController;
 	private String strategyType;
 
 	
-	public VersionsManager( LatexEditorView latexEditorView , LatexEditorController editorController) {
+	public VersionsManager( LatexEditorController editorController) {
 		this.strategy = new VersionsStrategyFactory().createStrategy("volatileStrategy");
 		this.editorController = editorController;
 		strategyType = "volatile";
-		this.latexEditorView = latexEditorView;
+		
 	}
 	
 	

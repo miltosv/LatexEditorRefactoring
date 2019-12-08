@@ -15,7 +15,6 @@ import java.awt.event.ActionEvent;
 public class ChooseTemplate {
 
 	private JFrame frame;
-	private LatexEditorView latexEditorView;
 	private String previous;
 	private LatexEditorController editorController;
 
@@ -23,8 +22,8 @@ public class ChooseTemplate {
 	 * Create the application.
 	 * @param latexEditorView 
 	 */
-	public ChooseTemplate(LatexEditorView latexEditorView,LatexEditorController editorController, String previous) {
-		this.latexEditorView = latexEditorView;
+	public ChooseTemplate( LatexEditorController editorController, String previous) {
+		
 		this.previous = previous;
 		this.editorController = editorController;
 		initialize();

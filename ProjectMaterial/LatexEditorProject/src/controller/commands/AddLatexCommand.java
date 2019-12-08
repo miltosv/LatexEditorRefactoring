@@ -9,11 +9,10 @@ import java.util.HashMap;
 
 import controller.LatexEditorController;
 import model.VersionsManager;
-import view.LatexEditorView;
+
 
 public class AddLatexCommand implements Command  {
 	private VersionsManager versionsManager;
-	private LatexEditorView editorView;
 	private LatexEditorController editorController;
 	private HashMap<String, String> latexCommands;
 	private static final int ID=0;
@@ -21,8 +20,7 @@ public class AddLatexCommand implements Command  {
 	private static final String LatexCommandFilePath ="src/resources/settings/latexCommands";
 	
 	
-	public AddLatexCommand(VersionsManager versionsManager,LatexEditorView view, LatexEditorController editorController) {
-		editorView= view;
+	public AddLatexCommand(VersionsManager versionsManager, LatexEditorController editorController) {
 		this.versionsManager = versionsManager;
 		this.editorController = editorController;
 		latexCommands = new HashMap<String,String>();

@@ -2,15 +2,13 @@ package controller.commands;
 
 import controller.LatexEditorController;
 import model.VersionsManager;
-import view.LatexEditorView;
+
 
 public class EditCommand implements Command {
 	private VersionsManager versionsManager;
-	private LatexEditorView editorView;
 	private LatexEditorController editorController;
 	
-	public EditCommand(VersionsManager versionsManager,LatexEditorView view, LatexEditorController editorController) {
-		editorView=view;
+	public EditCommand(VersionsManager versionsManager, LatexEditorController editorController) {
 		this.editorController = editorController;
 		this.versionsManager = versionsManager;
 	}
