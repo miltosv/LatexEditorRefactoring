@@ -8,6 +8,7 @@ import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.JTextPane;
 
+import controller.LatexEditorController;
 import model.Document;
 
 import javax.swing.JEditorPane;
@@ -25,6 +26,7 @@ public class MainWindow {
 	private JFrame frame;
 	private JEditorPane editorPane = new JEditorPane();
 	private LatexEditorView latexEditorView;
+	private LatexEditorController editorController;
 	private String currentCommand;
 	
 	
@@ -35,7 +37,7 @@ public class MainWindow {
 	public void editContents(String type) {
 		currentCommand=type;
 		
-		latexEditorView.getController().enact("addLatex");
+		editorController.enact("addLatex");
 		editorPane.setText(latexEditorView.getCurrentDocument().getContents());
 	}
 	
@@ -56,8 +58,9 @@ public class MainWindow {
 	 * Create the application.
 	 * @param latexEditorView 
 	 */
-	public MainWindow(LatexEditorView latexEditorView) {
+	public MainWindow(LatexEditorView latexEditorView, LatexEditorController editorController) {
 		this.latexEditorView = latexEditorView;
+		this.editorController = editorController;
 		initialize();
 		frame.setVisible(true);
 	}
@@ -81,7 +84,7 @@ public class MainWindow {
 		JMenuItem mntmNewFile = new JMenuItem("New file");
 		mntmNewFile.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				ChooseTemplate chooseTemplate = new ChooseTemplate(latexEditorView, latexEditorView.getController(), "main");
+				ChooseTemplate chooseTemplate = new ChooseTemplate(latexEditorView,editorController, "main");
 				frame.dispose();
 			}
 		});
@@ -91,7 +94,7 @@ public class MainWindow {
 		mntmSave.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//latexEditorView.setText(editorPane.getText());
-				latexEditorView.getController().enact("edit");
+				editorController.enact("edit");
 			}
 		});
 		mnFile.add(mntmSave);
@@ -106,7 +109,7 @@ public class MainWindow {
 					String filename = filechooser.getSelectedFile().toString();
 					
 					latexEditorView.setFilename(filename);
-					latexEditorView.getController().enact("load");
+					editorController.enact("load");
 					mnCommands.setEnabled(true);
 					addChapter.setEnabled(true);
 					if(latexEditorView.getType().equals("letterTemplate")) {
@@ -132,7 +135,7 @@ public class MainWindow {
 						filename = filename+".tex";
 					}
 					latexEditorView.setFilename(filename);
-					latexEditorView.getController().enact("save");
+					editorController.enact("save");
 				}
 				
 			}
@@ -236,12 +239,12 @@ public class MainWindow {
 		menuStable.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//latexEditorView.setStrategy("stable");
-				latexEditorView.getController().getVersionsManager().setStrategyType("stable");
-				if(latexEditorView.getController().getVersionsManager().isEnabled() == false) {
-					latexEditorView.getController().enact("enableVersionsManagement");
+				editorController.getVersionsManager().setStrategyType("stable");
+				if(editorController.getVersionsManager().isEnabled() == false) {
+					editorController.enact("enableVersionsManagement");
 				}
 				else {
-					latexEditorView.getController().enact("changeVersionsStrategy");
+					editorController.enact("changeVersionsStrategy");
 				}
 				menuVolatile.setSelected(false);
 				menuStable.setEnabled(false);
@@ -253,12 +256,12 @@ public class MainWindow {
 			public void actionPerformed(ActionEvent e) {
 				
 				//latexEditorView.setStrategy("volatile");
-				latexEditorView.getController().getVersionsManager().setStrategyType("volatile");
-				if(latexEditorView.getController().getVersionsManager().isEnabled() == false) {
-					latexEditorView.getController().enact("enableVersionsManagement");
+				editorController.getVersionsManager().setStrategyType("volatile");
+				if(editorController.getVersionsManager().isEnabled() == false) {
+					editorController.enact("enableVersionsManagement");
 				}
 				else {
-					latexEditorView.getController().enact("changeVersionsStrategy");
+					editorController.enact("changeVersionsStrategy");
 				}
 				menuStable.setSelected(false);
 				menuVolatile.setEnabled(false);
@@ -272,7 +275,7 @@ public class MainWindow {
 		JMenuItem mntmDisable = new JMenuItem("Disable");
 		mntmDisable.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				latexEditorView.getController().enact("disableVersionsManagement");
+				editorController.enact("disableVersionsManagement");
 			}
 		});
 		mnStrategy.add(mntmDisable);
@@ -280,7 +283,7 @@ public class MainWindow {
 		JMenuItem mntmRollback = new JMenuItem("Rollback");
 		mntmRollback.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				latexEditorView.getController().enact("rollbackToPreviousVersion");
+				editorController.enact("rollbackToPreviousVersion");
 				Document doc = latexEditorView.getCurrentDocument();
 				editorPane.setText(doc.getContents());
 			}
@@ -291,7 +294,7 @@ public class MainWindow {
 		editorPane.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent e) {
-				latexEditorView.getController().enact("edit");
+				editorController.enact("edit");
 			}
 		});
 		
