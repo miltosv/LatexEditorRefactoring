@@ -38,7 +38,7 @@ public class MainWindow {
 		currentCommand=type;
 		
 		editorController.enact("addLatex");
-		editorPane.setText(latexEditorView.getCurrentDocument().getContents());
+		editorPane.setText(editorController.getCurrentDocument().getContents());
 	}
 	
 	public String getPaneText() {
@@ -119,7 +119,7 @@ public class MainWindow {
 					if(editorController.getTypeOfDocument().equals("articleTemplate")) {
 						addChapter.setEnabled(false);
 					}
-					editorPane.setText(latexEditorView.getCurrentDocument().getContents());
+					editorPane.setText(editorController.getCurrentDocument().getContents());
 				}
 			}
 		});
@@ -286,7 +286,7 @@ public class MainWindow {
 		mntmRollback.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				editorController.enact("rollbackToPreviousVersion");
-				Document doc = latexEditorView.getCurrentDocument();
+				Document doc = editorController.getCurrentDocument();
 				editorPane.setText(doc.getContents());
 			}
 		});
@@ -309,12 +309,12 @@ public class MainWindow {
 		scrollPane.setViewportView(editorPane);
 		
 //		System.out.println(latexEditorView.getCurrentDocument().getContents());
-		editorPane.setText(latexEditorView.getCurrentDocument().getContents());
+		editorPane.setText(editorController.getCurrentDocument().getContents());
 	}
 
 	public void update() {
-		editorPane.setText(latexEditorView.getCurrentDocument().getContents());
-		System.out.println(latexEditorView.getCurrentDocument().getContents());
+		editorPane.setText(editorController.getCurrentDocument().getContents());
+		System.out.println(editorController.getCurrentDocument().getContents());
 	}
 
 }

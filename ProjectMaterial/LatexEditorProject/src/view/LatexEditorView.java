@@ -6,10 +6,10 @@ import model.VersionsManager;
 
 public class LatexEditorView {
 	private LatexEditorController controller;
-	private Document currentDocument;
-	private String type;
+//	private Document currentDocument;
+//	private String type;
 //	private String text;
-	private String filename;
+	//private String filename;
 //	private String strategy;
 //	private VersionsManager versionsManager;
 	private MainWindow mainWindow;
@@ -62,14 +62,26 @@ public class LatexEditorView {
 		return controller;
 	}*/
 	
+	
+	
+	
+	
+	
 
-	public Document getCurrentDocument() {
+	/*public Document getCurrentDocument() {
 		return currentDocument;
 	}
 	public void setCurrentDocument(Document currentDocument) {
 		this.currentDocument = currentDocument;
-	}
+	}*/
 
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	/*
