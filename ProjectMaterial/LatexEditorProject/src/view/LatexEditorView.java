@@ -21,7 +21,7 @@ public class LatexEditorView {
 	}
 	
 	public void createMainwindow() {
-		mainWindow=new MainWindow(this);
+		mainWindow=new MainWindow(this, controller);
 		
 	}
 	
@@ -52,9 +52,10 @@ public class LatexEditorView {
 	public void setText(String text) {
 		this.text = text;
 	}*/
-	public LatexEditorController getController() {
-		return controller;
-	}
+
+	
+	
+	
 	public void setController(LatexEditorController controller) {
 		this.controller = controller;
 	}
