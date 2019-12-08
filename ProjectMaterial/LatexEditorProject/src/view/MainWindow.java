@@ -108,7 +108,8 @@ public class MainWindow {
 				if(option == JFileChooser.APPROVE_OPTION) {
 					String filename = filechooser.getSelectedFile().toString();
 					
-					latexEditorView.setFilename(filename);
+					
+					editorController.setFilePathName(filename);
 					editorController.enact("load");
 					mnCommands.setEnabled(true);
 					addChapter.setEnabled(true);
@@ -134,7 +135,8 @@ public class MainWindow {
 					if(filename.endsWith(".tex") == false) {
 						filename = filename+".tex";
 					}
-					latexEditorView.setFilename(filename);
+					
+					editorController.setFilePathName(filename);
 					editorController.enact("save");
 				}
 				

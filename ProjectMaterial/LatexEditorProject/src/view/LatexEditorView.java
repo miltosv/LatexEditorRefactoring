@@ -87,13 +87,7 @@ public class LatexEditorView {
 		// TODO Auto-generated method stub
 		currentDocument.save(filename);
 	}*/
-	public String getFilename() {
-		return filename;
-	}
-	public void setFilename(String filename) {
-		this.filename = filename;
-	}
-	
+
 	/*
 	public void loadFromFile() {
 		// TODO Auto-generated method stub
