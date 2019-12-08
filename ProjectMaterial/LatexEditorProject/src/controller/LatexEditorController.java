@@ -28,9 +28,10 @@ public class LatexEditorController{
 
 		editorView = latexView;
 		
-		mainWindow = editorView.getMainWindow();
+		//mainWindow = editorView.getMainWindow();
+		System.out.println("Controller here");
+		mainWindow = new MainWindow(editorView,this); 
 		
-	
 		versionsManager= new VersionsManager(editorView , this);
 		
 		
@@ -38,6 +39,8 @@ public class LatexEditorController{
 		this.dynamicallyCreateCommands("src/resources/settings/commands");
 		
 	}
+	
+	
 	private void dynamicallyCreateCommands(String PropertiesFilePath){
 		
 		CommandFactory commandFactory = new CommandFactory(versionsManager,mainWindow,editorView,this);
@@ -72,6 +75,12 @@ public class LatexEditorController{
 	public void setVersionsManager(VersionsManager versionsManager) {
 		this.versionsManager = versionsManager;
 	}
+	
+	
+	public MainWindow getMainWindow() {
+		return this.mainWindow;
+	}
+	
 	
 	public String getTypeOfDocument() {
 		return typeOfDocument;

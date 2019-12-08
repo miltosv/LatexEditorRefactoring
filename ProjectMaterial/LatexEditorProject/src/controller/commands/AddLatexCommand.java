@@ -55,9 +55,9 @@ public class AddLatexCommand implements Command  {
 
 	@Override
 	public void execute() {
-		int caretPosition=editorView.getMainWindow().getCaret();
+		int caretPosition=editorController.getMainWindow().getCaret();
 		String contents=new String(editorController.getCurrentDocument().getContents());
-		String command=editorView.getMainWindow().getCurrentCommand();
+		String command=editorController.getMainWindow().getCurrentCommand();
 		
 		
 		StringBuilder builder = new StringBuilder(contents);

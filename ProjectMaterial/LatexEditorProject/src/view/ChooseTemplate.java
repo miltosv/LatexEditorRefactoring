@@ -117,9 +117,9 @@ public class ChooseTemplate {
 				}
 
 				editorController.enact("create");
-				//latexEditorView.getController().enact("create");
-			//	System.out.print("Main window created here");
-				latexEditorView.createMainwindow();
+				
+				//latexEditorView.createMainwindow();
+				editorController.getMainWindow().startMainWindow();
 				//MainWindow mainWindow = new MainWindow(latexEditorView);
 				frame.dispose();
 			}
@@ -131,7 +131,8 @@ public class ChooseTemplate {
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(previous.equals("main")) {
-					latexEditorView.createMainwindow();
+					//latexEditorView.createMainwindow();
+					editorController.getMainWindow().startMainWindow();
 					//MainWindow mainWindow = new MainWindow(latexEditorView);
 					frame.dispose();
 				}
