@@ -16,7 +16,7 @@ public class AddLatexCommand implements Command  {
 	private HashMap<String, String> latexCommands;
 	private static final int ID=0;
 	private static final int CONTENTS=1;
-	private static final String LatexCommandFilePath ="src\\resources\\settings\\latexCommands";
+	private static final String LatexCommandFilePath ="src/resources/settings/latexCommands";
 	
 	
 	public AddLatexCommand(VersionsManager versionsManager,LatexEditorView view) {

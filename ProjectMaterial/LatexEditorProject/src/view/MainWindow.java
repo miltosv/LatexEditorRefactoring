@@ -235,8 +235,9 @@ public int getCaret() {
 		JCheckBoxMenuItem menuStable = new JCheckBoxMenuItem("Stable");
 		menuStable.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				latexEditorView.setStrategy("stable");
-				if(latexEditorView.getVersionsManager().isEnabled() == false) {
+				//latexEditorView.setStrategy("stable");
+				latexEditorView.getController().getVersionsManager().setStrategyType("stable");
+				if(latexEditorView.getController().getVersionsManager().isEnabled() == false) {
 					latexEditorView.getController().enact("enableVersionsManagement");
 				}
 				else {
@@ -251,8 +252,9 @@ public int getCaret() {
 		menuVolatile.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				latexEditorView.setStrategy("volatile");
-				if(latexEditorView.getVersionsManager().isEnabled() == false) {
+				//latexEditorView.setStrategy("volatile");
+				latexEditorView.getController().getVersionsManager().setStrategyType("volatile");
+				if(latexEditorView.getController().getVersionsManager().isEnabled() == false) {
 					latexEditorView.getController().enact("enableVersionsManagement");
 				}
 				else {

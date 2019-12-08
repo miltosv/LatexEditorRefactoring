@@ -12,12 +12,16 @@ public class VersionsManager {
 	private boolean enabled;
 	private VersionsStrategy strategy;
 	private LatexEditorView latexEditorView;
+	private String strategyType;
 
 	
-	public VersionsManager(LatexEditorView latexEditorView) {
+	public VersionsManager( LatexEditorView latexEditorView) {
 		this.strategy = new VersionsStrategyFactory().createStrategy("volatileStrategy");
+		strategyType = "volatile";
 		this.latexEditorView = latexEditorView;
 	}
+	
+	
 	
 	public boolean isEnabled() {
 		return enabled;
@@ -30,6 +34,11 @@ public class VersionsManager {
 	public void disable() {
 		enabled = false;
 	}
+	
+	public void setStrategyType(String type) {
+		strategyType = type;
+	}
+	
 	
 	public void setStrategy(VersionsStrategy strategy) {
 		this.strategy = strategy;
@@ -62,7 +71,7 @@ public class VersionsManager {
 */
 	public void enableStrategy() {
 		
-		String strategyType = latexEditorView.getStrategy();
+		//String strategyType = latexEditorView.getStrategy();
 		if(strategyType.equals("volatile") && strategy instanceof VolatileVersionsStrategy) {
 			enable();
 		}
@@ -86,7 +95,7 @@ public class VersionsManager {
 
 	public void changeStrategy() {
 		
-		String strategyType = latexEditorView.getStrategy();
+		//String strategyType = latexEditorView.getStrategy();
 		if(strategyType.equals("stable") && strategy instanceof VolatileVersionsStrategy) {
 			VersionsStrategy newStrategy = new StableVersionsStrategy();
 			newStrategy.setEntireHistory(strategy.getEntireHistory());

@@ -18,13 +18,18 @@ public class LatexEditorController{
 	private MainWindow mainWindow;
 	private LatexEditorView editorView;
 	
-	public LatexEditorController(VersionsManager versionsManager,LatexEditorView latexView) {
-		//CommandFactory commandFactory = new CommandFactory(versionsManager);
-		editorView=latexView;
-		mainWindow=editorView.getMainWindow();
-		this.versionsManager=versionsManager;
+	public LatexEditorController(LatexEditorView latexView) {
+
+		editorView = latexView;
+		
+		mainWindow = editorView.getMainWindow();
+		
+	
+		versionsManager= new VersionsManager(editorView);
+		
+		
 		commands = new HashMap<String, Command>(); 
-		this.dynamicallyCreateCommands("src\\resources\\settings\\commands");
+		this.dynamicallyCreateCommands("src/resources/settings/commands");
 		
 	}
 	private void dynamicallyCreateCommands(String PropertiesFilePath){
@@ -53,4 +58,14 @@ public class LatexEditorController{
 			mainWindow.update();
 		}
 	}
+	
+	
+	public VersionsManager getVersionsManager() {
+		return versionsManager;
+	}
+	public void setVersionsManager(VersionsManager versionsManager) {
+		this.versionsManager = versionsManager;
+	}
+	
+	
 }
