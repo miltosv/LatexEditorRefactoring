@@ -59,8 +59,19 @@ public class MainWindow {
 	 * @param latexEditorView 
 	 */
 	public MainWindow(LatexEditorView latexEditorView, LatexEditorController editorController) {
+		System.out.println("MainWindow here");
 		this.latexEditorView = latexEditorView;
+		
+
 		this.editorController = editorController;
+		System.out.println("MainWindow here");
+
+		//initialize();
+		//frame.setVisible(true);
+	}
+	
+	
+	public void startMainWindow() {
 		initialize();
 		frame.setVisible(true);
 	}
@@ -151,6 +162,7 @@ public class MainWindow {
 			}
 		});
 		mnFile.add(mntmExit);
+		
 		
 		
 		menuBar.add(mnCommands);

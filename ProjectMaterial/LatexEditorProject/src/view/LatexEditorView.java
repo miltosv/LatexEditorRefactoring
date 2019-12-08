@@ -5,14 +5,14 @@ import model.Document;
 import model.VersionsManager;
 
 public class LatexEditorView {
-	private LatexEditorController controller;
+	//private LatexEditorController controller;
 //	private Document currentDocument;
 //	private String type;
 //	private String text;
 	//private String filename;
 //	private String strategy;
 //	private VersionsManager versionsManager;
-	private MainWindow mainWindow;
+	//private MainWindow mainWindow;
 //TODO changed this	
 	
 	
@@ -20,20 +20,9 @@ public class LatexEditorView {
 	//	controller=new LatexEditorController(versionsManager,this);
 	}
 	
-	public void createMainwindow() {
-		mainWindow=new MainWindow(this, controller);
-		
-	}
+
 	
-	public MainWindow getMainWindow() {
-		return mainWindow;
-	}
-	
-	
-	
-	public void setController(LatexEditorController controller) {
-		this.controller = controller;
-	}
+
 	/*
 	public VersionsManager getVersionsManager() {
 		return versionsManager;
