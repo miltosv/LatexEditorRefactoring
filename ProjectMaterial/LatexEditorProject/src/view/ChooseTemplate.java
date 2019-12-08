@@ -4,6 +4,9 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JRadioButton;
+
+import controller.LatexEditorController;
+
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -14,14 +17,16 @@ public class ChooseTemplate {
 	private JFrame frame;
 	private LatexEditorView latexEditorView;
 	private String previous;
+	private LatexEditorController editorController;
 
 	/**
 	 * Create the application.
 	 * @param latexEditorView 
 	 */
-	public ChooseTemplate(LatexEditorView latexEditorView, String previous) {
+	public ChooseTemplate(LatexEditorView latexEditorView,LatexEditorController editorController, String previous) {
 		this.latexEditorView = latexEditorView;
 		this.previous = previous;
+		this.editorController = editorController;
 		initialize();
 		frame.setVisible(true);
 	}
@@ -107,7 +112,8 @@ public class ChooseTemplate {
 					latexEditorView.setType("emptyTemplate");
 				}
 
-				latexEditorView.getController().enact("create");
+				editorController.enact("create");
+				//latexEditorView.getController().enact("create");
 			//	System.out.print("Main window created here");
 				latexEditorView.createMainwindow();
 				//MainWindow mainWindow = new MainWindow(latexEditorView);
