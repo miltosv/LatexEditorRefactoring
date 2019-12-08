@@ -10,8 +10,8 @@ public class LatexEditorView {
 	private String type;
 //	private String text;
 	private String filename;
-	private String strategy;
-	private VersionsManager versionsManager;
+//	private String strategy;
+//	private VersionsManager versionsManager;
 	private MainWindow mainWindow;
 //TODO changed this	
 	
@@ -28,20 +28,24 @@ public class LatexEditorView {
 	public MainWindow getMainWindow() {
 		return mainWindow;
 	}
-	
+	/*
 	public VersionsManager getVersionsManager() {
 		return versionsManager;
 	}
 	public void setVersionsManager(VersionsManager versionsManager) {
 		this.versionsManager = versionsManager;
-	}
+	}*/
+	
+	
+	
+	/*
 	public String getStrategy() {
 		return strategy;
 	}
 	public void setStrategy(String strategy) {
 		this.strategy = strategy;
 	}
-	/*
+	
 	public String getText() {
 		return text;
 	}

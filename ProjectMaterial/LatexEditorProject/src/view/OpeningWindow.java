@@ -39,12 +39,13 @@ public class OpeningWindow {
 	 * Create the application.
 	 */
 	public OpeningWindow() {
-		VersionsStrategy versionsStrategy = new VolatileVersionsStrategy();
+		//VersionsStrategy versionsStrategy = new VolatileVersionsStrategy();
 		latexEditorView = new LatexEditorView();
-		VersionsManager versionsManager = new VersionsManager(versionsStrategy, latexEditorView);
-		LatexEditorController controller = new LatexEditorController(versionsManager,latexEditorView);
+		//VersionsManager versionsManager = new VersionsManager(versionsStrategy, latexEditorView);
+		//VersionsManager versionsManager = new VersionsManager(latexEditorView);
+		LatexEditorController controller = new LatexEditorController(latexEditorView);
 		latexEditorView.setController(controller);
-		latexEditorView.setVersionsManager(versionsManager);
+		//latexEditorView.setVersionsManager(versionsManager);
 		initialize();
 		frame.setVisible(true);
 	}
