@@ -53,12 +53,12 @@ public class VersionsManager {
 		}
 	}
 
-	
+	/*
 	public void loadFromFile() {
 		
 		latexEditorView.loadFromFile();
 	}
-
+*/
 	public void enableStrategy() {
 		
 		String strategyType = latexEditorView.getStrategy();

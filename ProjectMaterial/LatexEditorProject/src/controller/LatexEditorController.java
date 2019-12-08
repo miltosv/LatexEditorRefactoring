@@ -1,24 +1,11 @@
 package controller;
 
-import static java.nio.file.Files.readAllBytes;
-import static java.nio.file.Paths.get;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.HashMap;
 
-import controller.commands.AddLatexCommand;
-import controller.commands.ChangeVersionsStrategyCommand;
 import controller.commands.Command;
 import controller.commands.CommandFactory;
-import controller.commands.CreateCommand;
-import controller.commands.DisableVersionsManagementCommand;
-import controller.commands.EditCommand;
-import controller.commands.EnableVersionsManagementCommand;
-import controller.commands.LoadCommand;
-import controller.commands.RollbackToPreviousVersionCommand;
-import controller.commands.SaveCommand;
-import model.Document;
 import model.DocumentManager;
 import model.VersionsManager;
 import view.LatexEditorView;
@@ -62,5 +49,8 @@ public class LatexEditorController{
 	
 	public void enact(String command) {
 		commands.get(command).execute();
+		if(mainWindow!=null) {
+			mainWindow.update();
+		}
 	}
 }

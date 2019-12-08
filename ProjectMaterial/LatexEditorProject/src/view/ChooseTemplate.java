@@ -108,7 +108,7 @@ public class ChooseTemplate {
 				}
 
 				latexEditorView.getController().enact("create");
-				
+			//	System.out.print("Main window created here");
 				latexEditorView.createMainwindow();
 				//MainWindow mainWindow = new MainWindow(latexEditorView);
 				frame.dispose();
