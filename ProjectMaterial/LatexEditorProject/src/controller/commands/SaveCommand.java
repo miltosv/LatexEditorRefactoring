@@ -1,18 +1,21 @@
 package controller.commands;
 
-import model.VersionsManager;
-import view.LatexEditorView;
+import controller.LatexEditorController;
+
+
 
 public class SaveCommand implements Command {
-	private LatexEditorView editorView;
+
+	private LatexEditorController editorController;
 	
-	public SaveCommand(LatexEditorView v) {
-		editorView=v;
+	public SaveCommand(LatexEditorController editorController) {
+		this.editorController = editorController;
 	}
+	
 	@Override
 	public void execute() {
 		
-		editorView.getCurrentDocument().save(editorView.getFilename());
+		editorController.getCurrentDocument().save(editorController.getFilePathName());
 	}
 
 }

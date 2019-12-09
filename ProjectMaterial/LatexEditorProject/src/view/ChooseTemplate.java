@@ -4,6 +4,9 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JRadioButton;
+
+import controller.LatexEditorController;
+
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -12,16 +15,17 @@ import java.awt.event.ActionEvent;
 public class ChooseTemplate {
 
 	private JFrame frame;
-	private LatexEditorView latexEditorView;
 	private String previous;
+	private LatexEditorController editorController;
 
 	/**
 	 * Create the application.
 	 * @param latexEditorView 
 	 */
-	public ChooseTemplate(LatexEditorView latexEditorView, String previous) {
-		this.latexEditorView = latexEditorView;
+	public ChooseTemplate( LatexEditorController editorController, String previous) {
+		
 		this.previous = previous;
+		this.editorController = editorController;
 		initialize();
 		frame.setVisible(true);
 	}
@@ -92,24 +96,29 @@ public class ChooseTemplate {
 		btnCreate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if(book.isSelected()) {
-					latexEditorView.setType("bookTemplate");
+					editorController.setTypeOfDocument("bookTemplate");
 				}
 				else if(report.isSelected()) {
-					latexEditorView.setType("reportTemplate");
+					//latexEditorView.setType("reportTemplate");
+					editorController.setTypeOfDocument("reportTemplate");
 				}
 				else if(article.isSelected()) {
-					latexEditorView.setType("articleTemplate");
+					//latexEditorView.setType("articleTemplate");
+					editorController.setTypeOfDocument("articleTemplate");
 				}
 				else if(letter.isSelected()) {
-					latexEditorView.setType("letterTemplate");
+					//latexEditorView.setType("letterTemplate");
+					editorController.setTypeOfDocument("letterTemplate");
 				}
 				else {
-					latexEditorView.setType("emptyTemplate");
+					//latexEditorView.setType("emptyTemplate");
+					editorController.setTypeOfDocument("emptyTemplate");
 				}
 
-				latexEditorView.getController().enact("create");
-			//	System.out.print("Main window created here");
-				latexEditorView.createMainwindow();
+				editorController.enact("create");
+				
+				//latexEditorView.createMainwindow();
+				editorController.getMainWindow().startMainWindow();
 				//MainWindow mainWindow = new MainWindow(latexEditorView);
 				frame.dispose();
 			}
@@ -121,7 +130,8 @@ public class ChooseTemplate {
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(previous.equals("main")) {
-					latexEditorView.createMainwindow();
+					//latexEditorView.createMainwindow();
+					editorController.getMainWindow().startMainWindow();
 					//MainWindow mainWindow = new MainWindow(latexEditorView);
 					frame.dispose();
 				}

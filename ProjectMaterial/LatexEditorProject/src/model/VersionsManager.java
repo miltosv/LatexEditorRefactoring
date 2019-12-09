@@ -2,22 +2,28 @@ package model;
 
 import javax.swing.JOptionPane;
 
+import controller.LatexEditorController;
 import model.versioning.StableVersionsStrategy;
 import model.versioning.VersionsStrategy;
 import model.versioning.VersionsStrategyFactory;
 import model.versioning.VolatileVersionsStrategy;
-import view.LatexEditorView;
+
 
 public class VersionsManager {
 	private boolean enabled;
 	private VersionsStrategy strategy;
-	private LatexEditorView latexEditorView;
+	private LatexEditorController editorController;
+	private String strategyType;
 
 	
-	public VersionsManager(LatexEditorView latexEditorView) {
+	public VersionsManager( LatexEditorController editorController) {
 		this.strategy = new VersionsStrategyFactory().createStrategy("volatileStrategy");
-		this.latexEditorView = latexEditorView;
+		this.editorController = editorController;
+		strategyType = "volatile";
+		
 	}
+	
+	
 	
 	public boolean isEnabled() {
 		return enabled;
@@ -31,26 +37,25 @@ public class VersionsManager {
 		enabled = false;
 	}
 	
+	public void setStrategyType(String type) {
+		strategyType = type;
+	}
+	
+	
 	public void setStrategy(VersionsStrategy strategy) {
 		this.strategy = strategy;
 	}
 	
 	public void setCurrentVersion(Document document) {
-		latexEditorView.setCurrentDocument(document);
+		editorController.setCurrentDocument(document);
 	}
 	
-	
-//TODO delegate Remove
-	public String getType() {
-		
-		return latexEditorView.getType();
-	}
 
 	public void saveContents() {
 		
 		if (this.isEnabled()){
-			this.putVersion(latexEditorView.getCurrentDocument());
-			latexEditorView.getCurrentDocument().changeVersion();
+			this.putVersion(editorController.getCurrentDocument());
+			editorController.getCurrentDocument().changeVersion();
 		}
 	}
 
@@ -62,7 +67,7 @@ public class VersionsManager {
 */
 	public void enableStrategy() {
 		
-		String strategyType = latexEditorView.getStrategy();
+		//String strategyType = latexEditorView.getStrategy();
 		if(strategyType.equals("volatile") && strategy instanceof VolatileVersionsStrategy) {
 			enable();
 		}
@@ -86,7 +91,7 @@ public class VersionsManager {
 
 	public void changeStrategy() {
 		
-		String strategyType = latexEditorView.getStrategy();
+		//String strategyType = latexEditorView.getStrategy();
 		if(strategyType.equals("stable") && strategy instanceof VolatileVersionsStrategy) {
 			VersionsStrategy newStrategy = new StableVersionsStrategy();
 			newStrategy.setEntireHistory(strategy.getEntireHistory());
@@ -118,7 +123,7 @@ public class VersionsManager {
 			}
 			else {
 				strategy.removeVersion();
-				latexEditorView.setCurrentDocument(doc);
+				editorController.setCurrentDocument(doc);
 			}
 		}
 		

@@ -4,16 +4,20 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+import controller.LatexEditorController;
 import model.Document;
 import model.VersionsManager;
-import view.LatexEditorView;
+
 
 public class LoadCommand implements Command {
 	private VersionsManager versionsManager;
-	private LatexEditorView editorView;
-	public LoadCommand(VersionsManager versionsManager,LatexEditorView view) {
-		editorView=view;
+	private LatexEditorController editorController;
+	
+	
+	public LoadCommand(VersionsManager versionsManager, LatexEditorController editorController) {
+
 		this.versionsManager = versionsManager;
+		this.editorController = editorController;
 	}
 
 	public VersionsManager getVersionsManager() {
@@ -30,7 +34,7 @@ public class LoadCommand implements Command {
 		
 		String fileContents = "";
 		try {
-			Scanner scanner = new Scanner(new FileInputStream(editorView.getFilename()));
+			Scanner scanner = new Scanner(new FileInputStream(editorController.getFilePathName()));
 			while(scanner.hasNextLine()) {
 				fileContents = fileContents + scanner.nextLine() + "\n";
 			}
@@ -55,8 +59,10 @@ public class LoadCommand implements Command {
 		else if(fileContents.startsWith("\\documentclass{letter}")) {
 			type = "letterTemplate";
 		}
-		editorView.setType(type);
-		editorView.setCurrentDocument(currentDocument);
+		
+		editorController.setTypeOfDocument(type);
+		//editorView.setType(type);
+		editorController.setCurrentDocument(currentDocument);
 		//versionsManager.loadFromFile();
 	}
 

@@ -1,14 +1,15 @@
 package controller.commands;
 
+import controller.LatexEditorController;
 import model.VersionsManager;
-import view.LatexEditorView;
+
 
 public class EditCommand implements Command {
 	private VersionsManager versionsManager;
-	private LatexEditorView editorView;
+	private LatexEditorController editorController;
 	
-	public EditCommand(VersionsManager versionsManager,LatexEditorView view) {
-		editorView=view;
+	public EditCommand(VersionsManager versionsManager, LatexEditorController editorController) {
+		this.editorController = editorController;
 		this.versionsManager = versionsManager;
 	}
 
@@ -16,8 +17,8 @@ public class EditCommand implements Command {
 	@Override
 	public void execute() {
 		
-		String contents=new String(editorView.getMainWindow().getPaneText());
-		editorView.getCurrentDocument().setContents(contents);
+		String contents=new String(editorController.getMainWindow().getPaneText());
+		editorController.getCurrentDocument().setContents(contents);
 //		System.out.println(editorView.getCurrentDocument().getContents() + " " + editorView.getMainWindow().getCaret());
 		//versionsManager.saveContents();
 	}

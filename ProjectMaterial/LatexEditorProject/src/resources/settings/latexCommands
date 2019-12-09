@@ -1,8 +1,8 @@
-chapter src\\resources\\latexCommands\\chapter
-section src\\resources\\latexCommands\\section
-subsection src\\resources\\latexCommands\\subsection
-subsubsection src\\resources\\latexCommands\\subsubsection
-itemize src\\resources\\latexCommands\\itemize
-enumerate src\\resources\\latexCommands\\enumerate
-table src\\resources\\latexCommands\\table
-figure src\\resources\\latexCommands\\figure
+chapter src/resources/latexCommands/chapter
+section src/resources/latexCommands/section
+subsection src/resources/latexCommands/subsection
+subsubsection src/resources/latexCommands/subsubsection
+itemize src/resources/latexCommands/itemize
+enumerate src/resources/latexCommands/enumerate
+table src/resources/latexCommands/table
+figure src/resources/latexCommands/figure

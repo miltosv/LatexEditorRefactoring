@@ -6,30 +6,42 @@ import java.util.HashMap;
 
 import controller.commands.Command;
 import controller.commands.CommandFactory;
+import model.Document;
 import model.DocumentManager;
 import model.VersionsManager;
-import view.LatexEditorView;
 import view.MainWindow;
 
 public class LatexEditorController{
 	private HashMap<String, Command> commands;
+	private String typeOfDocument;
+	private String filePathName;
+	private Document currentDocument;
+	
+	
 	private VersionsManager versionsManager;
 	private DocumentManager documentManager;
 	private MainWindow mainWindow;
-	private LatexEditorView editorView;
 	
-	public LatexEditorController(VersionsManager versionsManager,LatexEditorView latexView) {
-		//CommandFactory commandFactory = new CommandFactory(versionsManager);
-		editorView=latexView;
-		mainWindow=editorView.getMainWindow();
-		this.versionsManager=versionsManager;
+	
+	public LatexEditorController() {
+
+		
+		//mainWindow = editorView.getMainWindow();
+		System.out.println("Controller here");
+		mainWindow = new MainWindow(this); 
+		
+		versionsManager= new VersionsManager(this);
+		
+		
 		commands = new HashMap<String, Command>(); 
-		this.dynamicallyCreateCommands("src\\resources\\settings\\commands");
+		this.dynamicallyCreateCommands("src/resources/settings/commands");
 		
 	}
+	
+	
 	private void dynamicallyCreateCommands(String PropertiesFilePath){
 		
-		CommandFactory commandFactory = new CommandFactory(versionsManager,mainWindow,editorView);
+		CommandFactory commandFactory = new CommandFactory(versionsManager,mainWindow,this);
 		try {
 			BufferedReader CommandsSpecsReader = new BufferedReader(
 					new FileReader (PropertiesFilePath)
@@ -53,4 +65,42 @@ public class LatexEditorController{
 			mainWindow.update();
 		}
 	}
+	
+	
+	public VersionsManager getVersionsManager() {
+		return versionsManager;
+	}
+	public void setVersionsManager(VersionsManager versionsManager) {
+		this.versionsManager = versionsManager;
+	}
+	
+	
+	public MainWindow getMainWindow() {
+		return this.mainWindow;
+	}
+	
+	
+	public String getTypeOfDocument() {
+		return typeOfDocument;
+	}
+	public void setTypeOfDocument(String type) {
+		this.typeOfDocument = type;
+	}
+	public String getFilePathName() {
+		return filePathName;
+	}
+	public void setFilePathName(String filePathName) {
+		this.filePathName = filePathName;
+	}
+	
+	public Document getCurrentDocument() {
+		return currentDocument;
+	}
+	public void setCurrentDocument(Document currentDocument) {
+		this.currentDocument = currentDocument;
+	}
+	
+	
+	
+	
 }
