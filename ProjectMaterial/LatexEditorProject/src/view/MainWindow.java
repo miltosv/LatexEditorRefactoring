@@ -62,8 +62,11 @@ public class MainWindow {
 
 		this.editorController = editorController;
 		System.out.println("MainWindow here");
-
-		//initialize();
+		/**
+		 * keep these methods below in the program they are needed for windowbuilder to run properly so we can add stuff. if you have them uncommented
+		 * then crashes with null pointer exception
+		 */
+		//initialize(); 
 		//frame.setVisible(true);
 	}
 	
@@ -239,11 +242,11 @@ public class MainWindow {
 		});
 		mnCommands.add(addFigure);
 		
-		JMenu mnStrategy = new JMenu("Strategy");
-		menuBar.add(mnStrategy);
+		JMenu mnVersioning = new JMenu("Versioning");
+		menuBar.add(mnVersioning);
 		
 		JMenu mnEnable = new JMenu("Enable");
-		mnStrategy.add(mnEnable);
+		mnVersioning.add(mnEnable);
 		
 		JCheckBoxMenuItem menuVolatile = new JCheckBoxMenuItem("Volatile");
 		JCheckBoxMenuItem menuStable = new JCheckBoxMenuItem("Stable");
@@ -289,7 +292,7 @@ public class MainWindow {
 				editorController.enact("disableVersionsManagement");
 			}
 		});
-		mnStrategy.add(mntmDisable);
+		mnVersioning.add(mntmDisable);
 		
 		JMenuItem mntmRollback = new JMenuItem("Rollback");
 		mntmRollback.addActionListener(new ActionListener() {
@@ -300,7 +303,28 @@ public class MainWindow {
 			}
 		});
 		
-		mnStrategy.add(mntmRollback);
+		mnVersioning.add(mntmRollback);
+		
+		JMenu mnEncryption = new JMenu("Encryption");
+		menuBar.add(mnEncryption);
+		
+		JMenu mnSaveAs = new JMenu("Save As");
+		mnEncryption.add(mnSaveAs);
+		
+		JMenuItem mntmAtbashEncryptedFile = new JMenuItem("Atbash Encrypted File");
+		mnSaveAs.add(mntmAtbashEncryptedFile);
+		
+		JMenuItem mntmRotEncryptedFile = new JMenuItem("Rot13 Encrypted File");
+		mnSaveAs.add(mntmRotEncryptedFile);
+		
+		JMenu mnLoadFrom = new JMenu("Load From");
+		mnEncryption.add(mnLoadFrom);
+		
+		JMenuItem mntmAtbashEncrypted = new JMenuItem("Atbash Encrypted");
+		mnLoadFrom.add(mntmAtbashEncrypted);
+		
+		JMenuItem mntmRotEncrypted = new JMenuItem("Rot13 Encrypted");
+		mnLoadFrom.add(mntmRotEncrypted);
 		
 		editorPane.addKeyListener(new KeyAdapter() {
 			@Override
@@ -325,5 +349,4 @@ public class MainWindow {
 		editorPane.setText(editorController.getCurrentDocument().getContents());
 		System.out.println(editorController.getCurrentDocument().getContents());
 	}
-
 }
