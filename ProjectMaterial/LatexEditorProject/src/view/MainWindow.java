@@ -66,8 +66,8 @@ public class MainWindow {
 		 * keep these methods below in the program they are needed for windowbuilder to run properly so we can add stuff. if you have them uncommented
 		 * then crashes with null pointer exception
 		 */
-		//initialize(); 
-		//frame.setVisible(true);
+	//	initialize(); 
+	//	frame.setVisible(true);
 	}
 	
 	
@@ -327,9 +327,9 @@ public class MainWindow {
 		mnLoadFrom.add(mntmRotEncrypted);
 		
 		editorPane.addKeyListener(new KeyAdapter() {
+		
 			@Override
-			public void keyPressed(KeyEvent e) {
-				
+			public void keyReleased(KeyEvent e) {
 				editorController.enact("edit");
 			}
 		});
