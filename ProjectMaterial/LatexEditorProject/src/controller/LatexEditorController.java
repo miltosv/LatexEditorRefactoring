@@ -62,7 +62,7 @@ public class LatexEditorController{
 	public void enact(String command) {
 		commands.get(command).execute();
 		if(mainWindow!=null) {
-			mainWindow.update();
+			mainWindow.update(currentDocument.getContents());
 		}
 	}
 	

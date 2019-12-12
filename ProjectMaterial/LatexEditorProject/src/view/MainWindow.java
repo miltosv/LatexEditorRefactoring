@@ -20,6 +20,10 @@ import javax.swing.JScrollPane;
 import javax.swing.JCheckBoxMenuItem;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeEvent;
+import javax.swing.event.CaretListener;
+import javax.swing.event.CaretEvent;
 
 public class MainWindow {
 
@@ -329,9 +333,9 @@ public class MainWindow {
 		editorPane.addKeyListener(new KeyAdapter() {
 		
 			@Override
-			public void keyReleased(KeyEvent e) {
+			public void keyTyped(KeyEvent e) {
 				editorController.enact("edit");
-			}
+			} //TODO forget UPDATE current document ON EDIT ADD TO LATEX COMMAND KEEP PREVIOUS CARET POSITION
 		});
 		
 		
@@ -345,8 +349,8 @@ public class MainWindow {
 		editorPane.setText(editorController.getCurrentDocument().getContents());
 	}
 
-	public void update() {
-		editorPane.setText(editorController.getCurrentDocument().getContents());
-		System.out.println(editorController.getCurrentDocument().getContents());
+	public void update(String contents) {
+		editorPane.setText(contents);
+		System.out.println(contents);
 	}
 }
