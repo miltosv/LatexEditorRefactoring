@@ -302,29 +302,91 @@ public class MainWindow {
 				editorPane.setText(doc.getContents());
 			}
 		});
-		
+
 		mnVersioning.add(mntmRollback);
 		
 		JMenu mnEncryption = new JMenu("Encryption");
 		menuBar.add(mnEncryption);
 		
-		JMenu mnSaveAs = new JMenu("Save As");
-		mnEncryption.add(mnSaveAs);
+		JMenu mnChooseCipher = new JMenu("Choose strategy...");
+		mnEncryption.add(mnChooseCipher);
 		
-		JMenuItem mntmAtbashEncryptedFile = new JMenuItem("Atbash Encrypted File");
-		mnSaveAs.add(mntmAtbashEncryptedFile);
+		JCheckBoxMenuItem mntmAtbashCipher = new JCheckBoxMenuItem("Atbash");
 		
-		JMenuItem mntmRotEncryptedFile = new JMenuItem("Rot13 Encrypted File");
-		mnSaveAs.add(mntmRotEncryptedFile);
+		JCheckBoxMenuItem mntmRot13Cipher = new JCheckBoxMenuItem("Rot13");
+		mntmRot13Cipher.setEnabled(false); // its the default
 		
-		JMenu mnLoadFrom = new JMenu("Load From");
-		mnEncryption.add(mnLoadFrom);
+		mntmAtbashCipher.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				editorController.getCipherManager().setCipherStrategy("Atbash");
+				editorController.enact("changeCipherStrategy");
+				mntmRot13Cipher.setSelected(false);
+				mntmAtbashCipher.setEnabled(false);
+				mntmRot13Cipher.setEnabled(true);
+			}
+		});
 		
-		JMenuItem mntmAtbashEncrypted = new JMenuItem("Atbash Encrypted");
-		mnLoadFrom.add(mntmAtbashEncrypted);
+		mntmRot13Cipher.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				editorController.getCipherManager().setCipherStrategy("Rot13");
+				editorController.enact("changeCipherStrategy");
+				mntmAtbashCipher.setSelected(false);
+				mntmRot13Cipher.setEnabled(false);
+				mntmAtbashCipher.setEnabled(true);
+			}
+		});
 		
-		JMenuItem mntmRotEncrypted = new JMenuItem("Rot13 Encrypted");
-		mnLoadFrom.add(mntmRotEncrypted);
+		
+		
+		
+		
+		mnChooseCipher.add(mntmAtbashCipher);
+		
+		mnChooseCipher.add(mntmRot13Cipher);
+		
+		
+		JMenuItem mntmSaveEncryptedFile = new JMenuItem("Save Encrypted");
+	
+		mntmSaveEncryptedFile.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				JFileChooser filechooser = new JFileChooser();
+				int option = filechooser.showSaveDialog(null);
+				if(option == JFileChooser.APPROVE_OPTION) {
+					String filename = filechooser.getSelectedFile().toString();
+					if(filename.endsWith(".tex") == false) {
+						filename = filename+".tex";
+					}
+					
+					editorController.setFilePathName(filename);
+					editorController.enact("saveEncrypted");
+				}
+				
+			}
+		});
+		mnEncryption.add(mntmSaveEncryptedFile);
+		
+		
+		
+		JMenuItem mntmLoadEncryptedFile = new JMenuItem("Load Encrypted");
+		mntmLoadEncryptedFile.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JFileChooser filechooser = new JFileChooser();
+				int option = filechooser.showOpenDialog(null);
+				if(option == JFileChooser.APPROVE_OPTION) {
+					String filename = filechooser.getSelectedFile().toString();
+					
+					
+					editorController.setFilePathName(filename);
+					editorController.enact("loadEncrypted");
+				}
+			}
+		});
+		mnEncryption.add(mntmLoadEncryptedFile);
+		
+		
+		
 		
 		editorPane.addKeyListener(new KeyAdapter() {
 		

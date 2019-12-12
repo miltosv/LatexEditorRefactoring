@@ -4,7 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintWriter;
 
-public class fileSaver {
+public class FileSaver {
 	
 	public void save(String filename,String contents) {
 		try {

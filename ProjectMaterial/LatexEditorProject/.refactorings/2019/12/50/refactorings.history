@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;utilities.fileSaver.java&apos; to &apos;FileSaver.java&apos;&#x0A;- Original project: &apos;LatexEditorProjectSWDEVII&apos;&#x0A;- Original element: &apos;utilities.fileSaver.java&apos;&#x0A;- Renamed element: &apos;utilities.FileSaver.java&apos;" description="Rename compilation unit &apos;fileSaver.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;utilities{fileSaver.java" name="FileSaver.java" references="false" stamp="1576151251119" version="1.0"/>
+</session>
