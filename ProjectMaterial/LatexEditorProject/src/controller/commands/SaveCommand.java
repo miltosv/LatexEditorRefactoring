@@ -19,6 +19,10 @@ public class SaveCommand implements Command {
 		FileSaver saver= new FileSaver();
 		saver.save(editorController.getFilePathName(),editorController.getCurrentDocument().getContents());
 		
+<<<<<<< HEAD
+=======
+		//editorController.getCurrentDocument().save(editorController.getFilePathName());
+>>>>>>> master
 	}
 
 }
