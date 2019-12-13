@@ -1,12 +1,9 @@
 package controller.commands;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-
 import controller.LatexEditorController;
 import model.Document;
-import model.VersionsManager;
+import model.versioning.VersionsManager;
+import utilities.FileLoader;
 
 
 public class LoadCommand implements Command {
@@ -26,16 +23,9 @@ public class LoadCommand implements Command {
 		// TODO Auto-generated method stub
 		
 		String fileContents = "";
-		try {
-			Scanner scanner = new Scanner(new FileInputStream(editorController.getFilePathName()));
-			while(scanner.hasNextLine()) {
-				fileContents = fileContents + scanner.nextLine() + "\n";
-			}
-			scanner.close();
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		FileLoader loader=new FileLoader();
+		fileContents=loader.load(editorController.getFilePathName());
+		
 		Document currentDocument = new Document();
 		currentDocument.setContents(fileContents);
 		String type = "emptyTemplate";
@@ -57,7 +47,7 @@ public class LoadCommand implements Command {
 		editorController.setTypeOfDocument(type);
 		//editorView.setType(type);
 		editorController.setCurrentDocument(currentDocument);
-		//versionsManager.loadFromFile();
+		versionsManager.putVersion(currentDocument);
 	}
 
 }

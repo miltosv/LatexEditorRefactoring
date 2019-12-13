@@ -1,12 +1,9 @@
-package model;
+package model.versioning;
 
 import javax.swing.JOptionPane;
 
 import controller.LatexEditorController;
-import model.versioning.StableVersionsStrategy;
-import model.versioning.VersionsStrategy;
-import model.versioning.VersionsStrategyFactory;
-import model.versioning.VolatileVersionsStrategy;
+import model.Document;
 
 
 public class VersionsManager {

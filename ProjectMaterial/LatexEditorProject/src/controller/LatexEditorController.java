@@ -8,8 +8,8 @@ import controller.commands.Command;
 import controller.commands.CommandFactory;
 import model.Document;
 import model.DocumentManager;
-import model.VersionsManager;
 import model.encryption.CipherManager;
+import model.versioning.VersionsManager;
 import view.MainWindow;
 
 public class LatexEditorController{
@@ -29,7 +29,7 @@ public class LatexEditorController{
 
 		
 		//mainWindow = editorView.getMainWindow();
-		System.out.println("Controller here");
+		
 		mainWindow = new MainWindow(this); 
 		
 		versionsManager= new VersionsManager(this);

@@ -3,6 +3,7 @@ package controller.commands;
 import controller.LatexEditorController;
 import model.Document;
 import model.encryption.CipherManager;
+import model.versioning.VersionsManager;
 import utilities.FileLoader;
 
 public class LoadEncryptedCommand implements Command {
@@ -11,11 +12,13 @@ public class LoadEncryptedCommand implements Command {
 	private LatexEditorController editorController;
 	private CipherManager ciphManager;
 	private FileLoader fileLoader;
+	private VersionsManager vManager;
 	
-	public LoadEncryptedCommand(LatexEditorController editorController, CipherManager ciphManager) {
+	public LoadEncryptedCommand(LatexEditorController editorController, CipherManager ciphManager,VersionsManager vm) {
 		this.editorController = editorController;
 		this.ciphManager = ciphManager;
 		this.fileLoader = new FileLoader();
+		vManager=vm;
 	}
 	
 	
@@ -30,6 +33,7 @@ public class LoadEncryptedCommand implements Command {
 		
 		editorController.setTypeOfDocument("emptyTemplate");
 		editorController.setCurrentDocument(loadedDocument);
+		vManager.putVersion(loadedDocument);
 
 	}
 

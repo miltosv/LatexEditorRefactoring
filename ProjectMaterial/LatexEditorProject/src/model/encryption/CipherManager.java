@@ -2,8 +2,6 @@ package model.encryption;
 
 import java.util.HashMap;
 
-import model.Document;
-
 public class CipherManager {
 	
 	private CipherFactory ciphFactory = new CipherFactory();

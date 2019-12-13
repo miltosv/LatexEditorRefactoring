@@ -1,6 +1,6 @@
 package controller.commands;
 
-import model.VersionsManager;
+import model.versioning.VersionsManager;
 
 public class DisableVersionsManagementCommand implements Command {
 

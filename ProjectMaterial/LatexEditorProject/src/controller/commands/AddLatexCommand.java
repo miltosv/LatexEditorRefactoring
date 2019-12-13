@@ -8,7 +8,7 @@ import java.io.FileReader;
 import java.util.HashMap;
 
 import controller.LatexEditorController;
-import model.VersionsManager;
+import model.versioning.VersionsManager;
 
 
 public class AddLatexCommand implements Command  {
