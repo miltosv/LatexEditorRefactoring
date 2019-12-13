@@ -41,13 +41,13 @@ public class VersionsManager {
 	
 	/*public void setStrategy(VersionsStrategy strategy) {
 		this.strategy = strategy;
-	}*/
+	}
 	
 	public void setCurrentVersion(Document document) {
 		editorController.setCurrentDocument(document);
 	}
 	
-
+*/
 	public void saveContents() {
 		
 		if (this.isEnabled()){
@@ -102,7 +102,7 @@ public class VersionsManager {
 			enable();
 		}
 	}
-
+	
 	public void  putVersion(Document document) {
 	
 		strategy.putVersion(document.clone());

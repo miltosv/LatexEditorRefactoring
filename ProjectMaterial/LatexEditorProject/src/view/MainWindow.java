@@ -105,14 +105,14 @@ public class MainWindow {
 		});
 		mnFile.add(mntmNewFile);
 		
-		JMenuItem mntmSave = new JMenuItem("Save");
-		mntmSave.addActionListener(new ActionListener() {
+		JMenuItem takeSnapshot = new JMenuItem("Take Snapshot");
+		takeSnapshot.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//latexEditorView.setText(editorPane.getText());
 				editorController.enact("edit");
 			}
 		});
-		mnFile.add(mntmSave);
+		mnFile.add(takeSnapshot);
 		JMenuItem addChapter = new JMenuItem("Add chapter");
 		JMenu mnCommands = new JMenu("Commands");
 		JMenuItem mntmLoadFile = new JMenuItem("Load file");

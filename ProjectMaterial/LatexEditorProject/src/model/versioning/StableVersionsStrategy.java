@@ -14,7 +14,7 @@ public class StableVersionsStrategy implements VersionsStrategy{
 	@Override
 	public void putVersion(Document document) {
 		// TODO Auto-generated method stub
-		String filename = document.getVersionID() + ".tex";//DUPLICATE CODE?
+		String filename = "stables/"+document.getVersionID() + ".tex";//DUPLICATE CODE?
 		saver.save(filename, document.getContents());
 		versionID = document.getVersionID();
 		
@@ -28,10 +28,11 @@ public class StableVersionsStrategy implements VersionsStrategy{
 		
 		String fileContents = "";
 		try {
-			Scanner scanner = new Scanner(new FileInputStream(versionID + ".tex"));
+			Scanner scanner = new Scanner(new FileInputStream("stables/"+versionID + ".tex"));
 			while(scanner.hasNextLine()) {
 				fileContents = fileContents + scanner.nextLine() + "\n";
 			}
+			scanner.close();
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -46,7 +47,7 @@ public class StableVersionsStrategy implements VersionsStrategy{
 		// TODO Auto-generated method stub
 		for(int i = 0; i < documents.size(); i++) {
 			Document doc = documents.get(i);
-			saver.save(doc.getVersionID() +".tex", doc.getContents());
+			saver.save("stables/"+doc.getVersionID() +".tex", doc.getContents());
 			
 		}
 		if(documents.size() > 0)
@@ -65,7 +66,7 @@ public class StableVersionsStrategy implements VersionsStrategy{
 		for(int i = 0; i <= n; i++) {
 			String fileContents = "";
 			try {
-				Scanner scanner = new Scanner(new FileInputStream(i + ".tex"));
+				Scanner scanner = new Scanner(new FileInputStream("stables/"+i + ".tex"));
 				while(scanner.hasNextLine()) {
 					fileContents = fileContents + scanner.nextLine() + "\n";
 				}

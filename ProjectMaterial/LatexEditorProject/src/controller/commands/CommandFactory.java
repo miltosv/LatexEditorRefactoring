@@ -37,7 +37,7 @@ public class CommandFactory {
 			return new DisableVersionsManagementCommand(versionsManager);
 		}
 		if(type.equals("edit")) {
-			return new EditCommand(editorController);
+			return new EditCommand(editorController, versionsManager);
 		}
 		if(type.equals("enableVersionsManagement")) {
 			return new EnableVersionsManagementCommand(versionsManager);

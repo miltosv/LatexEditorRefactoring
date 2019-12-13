@@ -67,6 +67,7 @@ public class AddLatexCommand implements Command  {
 		
 		editorController.getCurrentDocument().setContents(documentContents);
 		versionsManager.saveContents();
+		editorController.getMainWindow().update(documentContents);
 	}
 
 }

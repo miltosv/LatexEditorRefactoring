@@ -23,7 +23,9 @@ public class CreateCommand implements Command {
 		String type = editorController.getTypeOfDocument();
 		
 		Document document = documentManager.createDocument(type);
-		versionsManager.setCurrentVersion(document);
+		editorController.setCurrentDocument(document);
+		versionsManager.putVersion(document);
+		editorController.getMainWindow().update(document.getContents());
 	}
 
 }

@@ -1,13 +1,15 @@
 package controller.commands;
 
 import controller.LatexEditorController;
+import model.versioning.VersionsManager;
 
 
 public class EditCommand implements Command {
 	private LatexEditorController editorController;
-	
-	public EditCommand(LatexEditorController editorController) {
+	private VersionsManager versionManager;
+	public EditCommand(LatexEditorController editorController,VersionsManager vm) {
 		this.editorController = editorController;
+		versionManager=vm;
 	}
 
 
@@ -16,6 +18,7 @@ public class EditCommand implements Command {
 		
 		String contents=new String(editorController.getMainWindow().getPaneText());
 		editorController.getCurrentDocument().setContents(contents);
+		versionManager.saveContents();
 
 	}
 
