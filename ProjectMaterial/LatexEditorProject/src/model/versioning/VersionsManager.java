@@ -39,9 +39,9 @@ public class VersionsManager {
 	}
 	
 	
-	public void setStrategy(VersionsStrategy strategy) {
+	/*public void setStrategy(VersionsStrategy strategy) {
 		this.strategy = strategy;
-	}
+	}*/
 	
 	public void setCurrentVersion(Document document) {
 		editorController.setCurrentDocument(document);
