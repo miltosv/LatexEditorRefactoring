@@ -1,9 +1,5 @@
 package view;
 
-import controller.LatexEditorController;
-import model.Document;
-import model.VersionsManager;
-
 public class LatexEditorView {
 	//private LatexEditorController controller;
 //	private Document currentDocument;

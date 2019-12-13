@@ -5,7 +5,7 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 
 import controller.LatexEditorController;
-import model.VersionsManager;
+import model.versioning.VersionsManager;
 import model.versioning.VersionsStrategy;
 import model.versioning.VolatileVersionsStrategy;
 

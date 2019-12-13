@@ -1,6 +1,7 @@
 package controller.commands;
 
 import controller.LatexEditorController;
+import utilities.FileSaver;
 
 
 
@@ -15,7 +16,9 @@ public class SaveCommand implements Command {
 	@Override
 	public void execute() {
 		
-		editorController.getCurrentDocument().save(editorController.getFilePathName());
+		FileSaver saver= new FileSaver();
+		saver.save(editorController.getFilePathName(),editorController.getCurrentDocument().getContents());
+		
 	}
 
 }

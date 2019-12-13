@@ -359,9 +359,9 @@ public class MainWindow {
 				int option = filechooser.showSaveDialog(null);
 				if(option == JFileChooser.APPROVE_OPTION) {
 					String filename = filechooser.getSelectedFile().toString();
-					if(filename.endsWith(".tex") == false) {
+					/*if(filename.endsWith(".tex") == false) {
 						filename = filename+".tex";
-					}
+					}*/
 					
 					editorController.setFilePathName(filename);
 					editorController.enact("saveEncrypted");

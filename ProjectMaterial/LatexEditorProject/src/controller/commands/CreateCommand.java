@@ -3,7 +3,7 @@ package controller.commands;
 import controller.LatexEditorController;
 import model.Document;
 import model.DocumentManager;
-import model.VersionsManager;
+import model.versioning.VersionsManager;
 
 public class CreateCommand implements Command {
 	private DocumentManager documentManager;

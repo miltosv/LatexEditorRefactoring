@@ -1,11 +1,9 @@
 package controller.commands;
 
-import java.util.HashMap;
-
 import controller.LatexEditorController;
 import model.DocumentManager;
-import model.VersionsManager;
 import model.encryption.CipherManager;
+import model.versioning.VersionsManager;
 import view.*;
 
 public class CommandFactory {
@@ -39,7 +37,7 @@ public class CommandFactory {
 			return new DisableVersionsManagementCommand(versionsManager);
 		}
 		if(type.equals("edit")) {
-			return new EditCommand(versionsManager, editorController);
+			return new EditCommand(editorController);
 		}
 		if(type.equals("enableVersionsManagement")) {
 			return new EnableVersionsManagementCommand(versionsManager);
@@ -60,7 +58,7 @@ public class CommandFactory {
 			return new SaveEncryptedCommand(editorController, ciphManager);
 		}
 		if(type.equals("loadEncrypted")){
-			return new LoadEncryptedCommand(editorController, ciphManager);
+			return new LoadEncryptedCommand(editorController, ciphManager,versionsManager);
 		}
 		return null;
 	}
