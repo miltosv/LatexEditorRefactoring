@@ -20,13 +20,6 @@ public class LoadCommand implements Command {
 		this.editorController = editorController;
 	}
 
-	public VersionsManager getVersionsManager() {
-		return versionsManager;
-	}
-
-	public void setVersionsManager(VersionsManager versionsManager) {
-		this.versionsManager = versionsManager;
-	}
 
 	@Override
 	public void execute() {
@@ -38,6 +31,7 @@ public class LoadCommand implements Command {
 			while(scanner.hasNextLine()) {
 				fileContents = fileContents + scanner.nextLine() + "\n";
 			}
+			scanner.close();
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

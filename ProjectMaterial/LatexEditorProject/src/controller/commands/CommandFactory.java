@@ -5,6 +5,7 @@ import java.util.HashMap;
 import controller.LatexEditorController;
 import model.DocumentManager;
 import model.VersionsManager;
+import model.encryption.CipherManager;
 import view.*;
 
 public class CommandFactory {
@@ -12,14 +13,15 @@ public class CommandFactory {
 	private VersionsManager versionsManager;
 	private LatexEditorController editorController;
 	private MainWindow mainWindow;
+	private CipherManager ciphManager;
 	
-	
-	public CommandFactory(VersionsManager versionsManager,MainWindow window, LatexEditorController editorController) {
+	public CommandFactory(VersionsManager versionsManager,MainWindow window, LatexEditorController editorController,CipherManager ciphManager) {
 		super();
 		mainWindow = window;
 		this.editorController = editorController;
 		this.versionsManager = versionsManager;
 		documentManager = new DocumentManager();
+		this.ciphManager = ciphManager;
 	}
 
 
@@ -50,6 +52,15 @@ public class CommandFactory {
 		}
 		if(type.equals("save")) {
 			return new SaveCommand(editorController);
+		}
+		if(type.equals("changeCipherStrategy")){
+			return new ChangeCipherStrategyCommand(editorController, ciphManager);
+		}
+		if(type.equals("saveEncrypted")){
+			return new SaveEncryptedCommand(editorController, ciphManager);
+		}
+		if(type.equals("loadEncrypted")){
+			return new LoadEncryptedCommand(editorController, ciphManager);
 		}
 		return null;
 	}

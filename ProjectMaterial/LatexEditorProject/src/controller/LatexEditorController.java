@@ -9,6 +9,7 @@ import controller.commands.CommandFactory;
 import model.Document;
 import model.DocumentManager;
 import model.VersionsManager;
+import model.encryption.CipherManager;
 import view.MainWindow;
 
 public class LatexEditorController{
@@ -20,6 +21,7 @@ public class LatexEditorController{
 	
 	private VersionsManager versionsManager;
 	private DocumentManager documentManager;
+	private CipherManager ciphManager;
 	private MainWindow mainWindow;
 	
 	
@@ -32,6 +34,9 @@ public class LatexEditorController{
 		
 		versionsManager= new VersionsManager(this);
 		
+		ciphManager = new CipherManager();
+		ciphManager.changeCipherStratgyTo("Rot13");
+		
 		
 		commands = new HashMap<String, Command>(); 
 		this.dynamicallyCreateCommands("src/resources/settings/commands");
@@ -41,7 +46,7 @@ public class LatexEditorController{
 	
 	private void dynamicallyCreateCommands(String PropertiesFilePath){
 		
-		CommandFactory commandFactory = new CommandFactory(versionsManager,mainWindow,this);
+		CommandFactory commandFactory = new CommandFactory(versionsManager,mainWindow,this,ciphManager);
 		try {
 			BufferedReader CommandsSpecsReader = new BufferedReader(
 					new FileReader (PropertiesFilePath)
@@ -70,8 +75,9 @@ public class LatexEditorController{
 	public VersionsManager getVersionsManager() {
 		return versionsManager;
 	}
-	public void setVersionsManager(VersionsManager versionsManager) {
-		this.versionsManager = versionsManager;
+	
+	public CipherManager getCipherManager() {
+		return ciphManager;
 	}
 	
 	
