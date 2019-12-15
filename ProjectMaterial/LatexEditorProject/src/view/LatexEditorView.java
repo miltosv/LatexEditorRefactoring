@@ -1,5 +1,6 @@
 package view;
 
+@Deprecated
 public class LatexEditorView {
 	//private LatexEditorController controller;
 //	private Document currentDocument;

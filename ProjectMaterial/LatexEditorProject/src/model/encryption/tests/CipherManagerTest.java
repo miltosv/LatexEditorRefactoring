@@ -1,8 +1,10 @@
-package model.encryption;
+package model.encryption.tests;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+
+import model.encryption.CipherManager;
 
 public class CipherManagerTest {
 
