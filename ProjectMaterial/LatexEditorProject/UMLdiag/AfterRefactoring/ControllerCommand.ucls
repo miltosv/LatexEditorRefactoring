@@ -40,7 +40,7 @@
   <class id="5" language="java" name="controller.commands.SuperCommand" project="LatexEditorProject" 
     file="/LatexEditorProject/src/controller/commands/SuperCommand.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="153" width="297" x="2735" y="-184"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
@@ -76,7 +76,7 @@
   </class>  
   <interface id="9" language="java" name="controller.commands.Command" project="LatexEditorProject" 
     file="/LatexEditorProject/src/controller/commands/Command.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="81" width="103" x="4872" y="683"/>    
+    <position height="-1" width="-1" x="4334" y="296"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      

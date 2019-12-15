@@ -62,10 +62,9 @@ public class MainWindow {
 	 *
 	 */
 	public MainWindow(LatexEditorController editorController) {
-		System.out.println("MainWindow here");
-
+		
 		this.editorController = editorController;
-		System.out.println("MainWindow here");
+		
 		/**
 		 * keep these methods below in the program they are needed for windowbuilder to run properly so we can add stuff. if you have them uncommented
 		 * then crashes with null pointer exception

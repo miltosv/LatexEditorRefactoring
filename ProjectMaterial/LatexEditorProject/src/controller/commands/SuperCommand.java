@@ -4,7 +4,9 @@ import controller.LatexEditorController;
 import model.versioning.VersionsManager;
 
 public abstract class SuperCommand implements Command {
+	
 	protected LatexEditorController editorController;
+	
 	protected VersionsManager versionsManager;
 	
 	

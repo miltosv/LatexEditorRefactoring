@@ -6,7 +6,7 @@ import static java.nio.file.Paths.get;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.HashMap;
-
+@Deprecated
 public class propertiesLoader {
 	//private String filePath;
 	private static final int ID=0;
