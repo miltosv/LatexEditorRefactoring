@@ -6,15 +6,12 @@ import model.versioning.VersionsManager;
 import utilities.FileLoader;
 
 
-public class LoadCommand implements Command {
-	private VersionsManager versionsManager;
-	private LatexEditorController editorController;
+public class LoadCommand extends SuperCommand {
 	
 	
 	public LoadCommand(VersionsManager versionsManager, LatexEditorController editorController) {
 
-		this.versionsManager = versionsManager;
-		this.editorController = editorController;
+		super(editorController,versionsManager);
 	}
 
 

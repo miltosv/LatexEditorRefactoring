@@ -11,9 +11,7 @@ import controller.LatexEditorController;
 import model.versioning.VersionsManager;
 
 
-public class AddLatexCommand implements Command  {
-	private VersionsManager versionsManager;
-	private LatexEditorController editorController;
+public class AddLatexCommand extends SuperCommand implements Command {
 	private HashMap<String, String> latexCommands;
 	private static final int ID=0;
 	private static final int CONTENTS=1;
@@ -21,8 +19,7 @@ public class AddLatexCommand implements Command  {
 	
 	
 	public AddLatexCommand(VersionsManager versionsManager, LatexEditorController editorController) {
-		this.versionsManager = versionsManager;
-		this.editorController = editorController;
+		super(editorController, versionsManager);
 		latexCommands = new HashMap<String,String>();
 		this.dynamicallyCreateLatexCommands();
 		

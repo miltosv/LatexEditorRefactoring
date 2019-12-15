@@ -4,14 +4,14 @@ import controller.LatexEditorController;
 import model.encryption.CipherManager;
 
 
-public class ChangeCipherStrategyCommand implements Command{
+public class ChangeCipherStrategyCommand extends SuperCommand{
 
-	private LatexEditorController editorController;
+//	private LatexEditorController editorController;
 	private CipherManager ciphManager;
 
 	
 	public ChangeCipherStrategyCommand(LatexEditorController editorController, CipherManager ciphManager) {
-		this.editorController = editorController;
+		super(editorController);
 		this.ciphManager = ciphManager;
 	}
 

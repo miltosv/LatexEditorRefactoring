@@ -5,12 +5,12 @@ import utilities.FileSaver;
 
 
 
-public class SaveCommand implements Command {
+public class SaveCommand extends SuperCommand {
 
 	private LatexEditorController editorController;
 	
 	public SaveCommand(LatexEditorController editorController) {
-		this.editorController = editorController;
+		super(editorController);
 	}
 	
 	@Override

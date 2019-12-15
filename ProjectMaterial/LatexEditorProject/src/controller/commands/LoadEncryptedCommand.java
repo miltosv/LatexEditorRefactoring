@@ -6,19 +6,19 @@ import model.encryption.CipherManager;
 import model.versioning.VersionsManager;
 import utilities.FileLoader;
 
-public class LoadEncryptedCommand implements Command {
+public class LoadEncryptedCommand extends SuperCommand {
 
 	
-	private LatexEditorController editorController;
+//	private LatexEditorController editorController;
 	private CipherManager ciphManager;
 	private FileLoader fileLoader;
-	private VersionsManager vManager;
+//	private VersionsManager vManager;
 	
 	public LoadEncryptedCommand(LatexEditorController editorController, CipherManager ciphManager,VersionsManager vm) {
-		this.editorController = editorController;
+		super(editorController,vm);
 		this.ciphManager = ciphManager;
 		this.fileLoader = new FileLoader();
-		vManager=vm;
+		
 	}
 	
 	
@@ -33,7 +33,7 @@ public class LoadEncryptedCommand implements Command {
 		
 		editorController.setTypeOfDocument("emptyTemplate");
 		editorController.setCurrentDocument(loadedDocument);
-		vManager.putVersion(loadedDocument);
+		versionsManager.putVersion(loadedDocument);
 
 	}
 

@@ -2,11 +2,11 @@ package controller.commands;
 
 import model.versioning.VersionsManager;
 
-public class EnableVersionsManagementCommand implements Command {
+public class EnableVersionsManagementCommand extends SuperCommand {
 	private VersionsManager versionsManager;
 	
 	public EnableVersionsManagementCommand(VersionsManager versionsManager) {
-		super();
+		super(versionsManager);
 		this.versionsManager = versionsManager;
 	}
 

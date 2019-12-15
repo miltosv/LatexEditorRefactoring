@@ -4,15 +4,14 @@ import controller.LatexEditorController;
 import model.encryption.CipherManager;
 import utilities.FileSaver;
 
-public class SaveEncryptedCommand implements Command {
+public class SaveEncryptedCommand extends SuperCommand {
 
 	
-	private LatexEditorController editorController;
 	private CipherManager ciphManager;
 	private FileSaver fileSaver;
 	
 	public SaveEncryptedCommand(LatexEditorController editorController, CipherManager ciphManager) {
-		this.editorController = editorController;
+		super(editorController);
 		this.ciphManager = ciphManager;
 		this.fileSaver = new FileSaver();
 	}

@@ -2,12 +2,12 @@ package controller.commands;
 
 import model.versioning.VersionsManager;
 
-public class RollbackToPreviousVersionCommand implements Command {
-	private VersionsManager versionsManager;
+public class RollbackToPreviousVersionCommand extends SuperCommand {
+
 	
 	
 	public RollbackToPreviousVersionCommand(VersionsManager versionsManager) {
-		this.versionsManager = versionsManager;
+		super(versionsManager);
 	}
 
 

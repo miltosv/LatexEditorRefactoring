@@ -5,16 +5,12 @@ import model.Document;
 import model.DocumentManager;
 import model.versioning.VersionsManager;
 
-public class CreateCommand implements Command {
+public class CreateCommand extends SuperCommand {
 	private DocumentManager documentManager;
-	private VersionsManager versionsManager;
-	private LatexEditorController editorController;
 	
 	public CreateCommand(DocumentManager documentManager, VersionsManager versionsManager,LatexEditorController editorController) {
-		
+		super(editorController, versionsManager);
 		this.documentManager = documentManager;
-		this.versionsManager = versionsManager;
-		this.editorController = editorController;
 	}
 
 	@Override
