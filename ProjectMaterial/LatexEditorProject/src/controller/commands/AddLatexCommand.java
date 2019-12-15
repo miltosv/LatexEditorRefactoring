@@ -11,7 +11,7 @@ import controller.LatexEditorController;
 import model.versioning.VersionsManager;
 
 
-public class AddLatexCommand extends SuperCommand implements Command {
+public class AddLatexCommand extends SuperCommand{
 	private HashMap<String, String> latexCommands;
 	private static final int ID=0;
 	private static final int CONTENTS=1;
