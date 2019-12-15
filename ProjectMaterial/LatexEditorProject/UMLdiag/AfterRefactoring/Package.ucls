@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.3" icons="true" automaticImage="PNG" always-add-relationships="false" generalizations="true" 
+  realizations="true" associations="true" dependencies="true" nesting-relationships="true" router="FAN">  
+  <package id="1" language="java" name="view" project="LatexEditorProjectSWDEVII" 
+    file="/LatexEditorProjectSWDEVII/src/view" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="50" width="101" x="925" y="82"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <package id="2" language="java" name="controller" project="LatexEditorProjectSWDEVII" 
+    file="/LatexEditorProjectSWDEVII/src/controller" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="50" width="101" x="803" y="172"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <package id="3" language="java" name="model.versioning" project="LatexEditorProjectSWDEVII" 
+    file="/LatexEditorProjectSWDEVII/src/model/versioning" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="50" width="121" x="762" y="352"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <package id="4" language="java" name="model.encryption" project="LatexEditorProjectSWDEVII" 
+    file="/LatexEditorProjectSWDEVII/src/model/encryption" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="50" width="122" x="558" y="352"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <package id="5" language="java" name="model" project="LatexEditorProjectSWDEVII" 
+    file="/LatexEditorProjectSWDEVII/src/model" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="50" width="101" x="904" y="442"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <package id="6" language="java" name="model.encryption.tests" project="LatexEditorProjectSWDEVII" 
+    file="/LatexEditorProjectSWDEVII/src/model/encryption/tests" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="50" width="154" x="486" y="262"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <package id="7" language="java" name="utilities" project="LatexEditorProjectSWDEVII" 
+    file="/LatexEditorProjectSWDEVII/src/utilities" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="50" width="101" x="701" y="442"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <package id="8" language="java" name="controller.commands" project="LatexEditorProjectSWDEVII" 
+    file="/LatexEditorProjectSWDEVII/src/controller/commands" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="50" width="145" x="701" y="262"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <dependency id="9">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="4"/>  
+  </dependency>  
+  <dependency id="10">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="8"/>  
+  </dependency>  
+  <dependency id="11">    
+    <bendpoint x="670" y="262"/>    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="4"/>  
+  </dependency>  
+  <dependency id="12">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="5"/>  
+  </dependency>  
+  <dependency id="13">    
+    <bendpoint x="955" y="172"/>    
+    <bendpoint x="955" y="262"/>    
+    <bendpoint x="955" y="352"/>    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="5"/>  
+  </dependency>  
+  <dependency id="14">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="2"/>  
+  </dependency>  
+  <dependency id="15">    
+    <bendpoint x="710" y="352"/>    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="7"/>  
+  </dependency>  
+  <dependency id="16">    
+    <bendpoint x="934" y="172"/>    
+    <bendpoint x="934" y="262"/>    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <dependency id="17">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <dependency id="18">    
+    <bendpoint x="913" y="262"/>    
+    <bendpoint x="913" y="352"/>    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="5"/>  
+  </dependency>  
+  <dependency id="19">    
+    <bendpoint x="876" y="262"/>    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <dependency id="20">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="4"/>  
+  </dependency>  
+  <dependency id="21">    
+    <bendpoint x="731" y="352"/>    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="5"/>  
+  </dependency>  
+  <dependency id="22">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="7"/>  
+  </dependency>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
