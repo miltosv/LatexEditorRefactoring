@@ -33,15 +33,18 @@ public class CipherManager {
 		decryptedString = cipherStrategy.decrypt(str);
 		return decryptedString;
 	}
+	
 	public void setCipherStrategy(String ciphStrategy) {
 		this.cipherStrategyType = ciphStrategy;
 	}
+	
 	public String getCipherStrategy() {
 		return this.cipherStrategyType;
 	}
 	
 	public void changeCipherStratgyTo(String newCipher) {
 		
+		this.cipherStrategyType = newCipher;
 		cipherStrategy = ciphers.get(newCipher);
 	}
 	
