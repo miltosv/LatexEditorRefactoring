@@ -1,4 +1,3 @@
-https://echeung.me/crcmaker/
 [
   {
     "name": "Document",
@@ -6,8 +5,7 @@ https://echeung.me/crcmaker/
     "subclasses": "",
     "type": 1,
     "responsibilities": [
-      "Represents the main model of the data of this software",
-      "Handles writing files to the filesystem"
+      "Represents the main model of the data of this software"
     ],
     "collaborators": [
       "None"
@@ -35,11 +33,11 @@ https://echeung.me/crcmaker/
       "Controls the versioning system.",
       "Enables/disables the versioning system",
       "Sets the mode / strategy of operation (Volatile/Stable)",
-      "Communicates with the front end"
+      "",
+      ""
     ],
     "collaborators": [
-      "VersionsStrategy",
-      "LatexEditorView"
+      "VersionsStrategy"
     ]
   },
   {
@@ -87,7 +85,6 @@ https://echeung.me/crcmaker/
       "Returns entire document history from filesystem"
     ],
     "collaborators": [
-      "VersionsStrategy",
       "Document",
       "VersionsManager"
     ]
@@ -110,12 +107,18 @@ https://echeung.me/crcmaker/
     "subclasses": "",
     "type": 1,
     "responsibilities": [
-      "Enacts commands according to input from the GUI"
+      "Enacts commands according to input from the GUI.",
+      "Creates manager objects for the different systems (versioning and encryption).",
+      "Keeps the current Document."
     ],
     "collaborators": [
-      "LatexEditorView",
       "Command (Interface)",
-      "CommandFactory"
+      "CommandFactory",
+      "VersionsManager",
+      "DocumentManager",
+      "CipherManager",
+      "MainWindow",
+      "Document"
     ]
   },
   {
@@ -136,11 +139,13 @@ https://echeung.me/crcmaker/
     "subclasses": "",
     "type": 1,
     "responsibilities": [
-      "Creates instances of command classes that implement command interface"
+      "Creates instances of command classes that extend the SuperCommand class and implement the command interface.",
+      "With the help of LatexEditorController, each command class gets an instance of the manager they need."
     ],
     "collaborators": [
       "VersionsManager",
       "DocumentManager",
+      "CipherManager",
       "EditCommand",
       "AddLatexCommand",
       "rollbacktoPreviousVersionCommand",
@@ -149,16 +154,32 @@ https://echeung.me/crcmaker/
       "CreateCommand",
       "enableVersionsCommand",
       "DisableVersionsCommand",
-      "ChangeVersionsStrategy"
+      "ChangeVersionsStrategyCommand",
+      "ChangeCipherStrategyCommand",
+      "SaveEncryptedCommand",
+      "LoadEncryptedCommand"
+    ]
+  },
+  {
+    "name": "SuperCommand",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 2,
+    "responsibilities": [
+      "a super class that holds the common fields of command classes.",
+      "implements the Command Interface"
+    ],
+    "collaborators": [
+      ""
     ]
   },
   {
     "name": "EnableVersionsManager",
-    "superclasses": "",
+    "superclasses": "SuperCommand",
     "subclasses": "",
     "type": 1,
     "responsibilities": [
-      "EnablesVersioning"
+      "Enables Versioning system"
     ],
     "collaborators": [
       "VersionsManager"
@@ -166,7 +187,7 @@ https://echeung.me/crcmaker/
   },
   {
     "name": "DisableVersionsManager",
-    "superclasses": "",
+    "superclasses": "SuperCommand",
     "subclasses": "",
     "type": 1,
     "responsibilities": [
@@ -178,49 +199,55 @@ https://echeung.me/crcmaker/
   },
   {
     "name": "AddLatexCommand",
-    "superclasses": "",
+    "superclasses": "SuperCommand",
     "subclasses": "",
     "type": 1,
     "responsibilities": [
-      "executes save in VersionsManager"
+      "Adds the selected latex command at the caret position inside the Document.",
+      "Keeps a copy of the document in the versioning system."
     ],
     "collaborators": [
+      "LatexEditorController",
       "VersionsManager"
     ]
   },
   {
     "name": "CreateCommand",
-    "superclasses": "",
+    "superclasses": "SuperCommand",
     "subclasses": "",
     "type": 1,
     "responsibilities": [
       "Gets Document manager to create a new document based on input (type)",
-      "Sets document created as current in VersionsManager"
+      "Sets document created as current in LatexEditorController.",
+      "Keeps a copy of the new document in the versioning system."
     ],
     "collaborators": [
       "DocumentManager",
+      "LatexEditorController",
       "VersionsManager"
     ]
   },
   {
     "name": "EditCommand",
-    "superclasses": "",
+    "superclasses": "SuperCommand",
     "subclasses": "",
     "type": 1,
     "responsibilities": [
-      "Calls VersionsCommand to save the contents of the document"
+      "Keeps text area and the document in backend updated. ",
+      "Adds a copy of the document in the versioning system."
     ],
     "collaborators": [
-      "VersionsCommand"
+      "LatexEditorController",
+      "VersionsManager"
     ]
   },
   {
     "name": "ChangeVersionsCommand",
-    "superclasses": "",
+    "superclasses": "SuperCommand",
     "subclasses": "",
     "type": 1,
     "responsibilities": [
-      "Calls VersionsManager to change versioning Strategy"
+      "Changes the Strategy of the versioning system"
     ],
     "collaborators": [
       "VersionsManager"
@@ -228,38 +255,214 @@ https://echeung.me/crcmaker/
   },
   {
     "name": "LoadCommand",
-    "superclasses": "",
+    "superclasses": "SuperCommand",
     "subclasses": "",
     "type": 1,
     "responsibilities": [
-      "Calls VersionsManager to load document from file"
+      "Loads a file in the system as a new document."
     ],
     "collaborators": [
-      "VersionsManager"
+      "LatexEditorController",
+      "VersionsManager",
+      "FileLoader"
     ]
   },
   {
     "name": "SaveCommand",
-    "superclasses": "",
+    "superclasses": "SuperCommand",
     "subclasses": "",
     "type": 1,
     "responsibilities": [
-      "Calls Versions manager to save document to file"
+      "Saves the document as a file in the hard disk."
+    ],
+    "collaborators": [
+      "LatexEditorController",
+      "FileSaver"
+    ]
+  },
+  {
+    "name": "RollbacktoPreviousVersionCommand",
+    "superclasses": "SuperCommand",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Rolls back to previous version of the document"
     ],
     "collaborators": [
       "VersionsManager"
     ]
   },
   {
-    "name": "RollbacktoPreviousVersionCommand",
+    "name": "ChangeCipherStrategyCommand",
+    "superclasses": "SuperCommand",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Changes the Strategy of the encrypting system"
+    ],
+    "collaborators": [
+      "LatexEditorController",
+      "CipherManager"
+    ]
+  },
+  {
+    "name": "SaveEncryptedCommand",
+    "superclasses": "SuperCommand",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Saves the document as an encrypted file in the hard disk."
+    ],
+    "collaborators": [
+      "LatexEditorController",
+      "CipherManager",
+      "FileSaver"
+    ]
+  },
+  {
+    "name": "LoadEncryptedCommand",
+    "superclasses": "SuperCommand",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Loads an encrypted file in the system as a new document."
+    ],
+    "collaborators": [
+      "LatexEditorController",
+      "CipherManager",
+      "FileLoader",
+      "VersionsManager"
+    ]
+  },
+  {
+    "name": "CipherManager",
     "superclasses": "",
     "subclasses": "",
     "type": 1,
     "responsibilities": [
-      "calls VersionsManager to roll back to previous version of the document"
+      "Controls the encryption system.",
+      "Sets the algorithm for encryption (Atbash/Rot13)"
     ],
     "collaborators": [
-      "VersionsManager"
+      "CipherFactory",
+      "CipherStrategy"
+    ]
+  },
+  {
+    "name": "CipherStrategy",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 3,
+    "responsibilities": [
+      "encrypts a String",
+      "decrypts a String"
+    ],
+    "collaborators": [
+      ""
+    ]
+  },
+  {
+    "name": "Rot13Cipher",
+    "superclasses": "CipherStrategy",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Encrypts a String based on Rot13 algorithm.",
+      "Decrypts a String based on Rot13 algorithm."
+    ],
+    "collaborators": [
+      ""
+    ]
+  },
+  {
+    "name": "AtbashCipher",
+    "superclasses": "CipherStrategy",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Encrypts a String based on Atbash algorithm.",
+      "Decrypts a String based on Atbash algorithm."
+    ],
+    "collaborators": [
+      ""
+    ]
+  },
+  {
+    "name": "CipherFactory",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Creates instances of cipher classes that implement the CipherStrategy interface."
+    ],
+    "collaborators": [
+      "AtbashCipher",
+      "Rot13Cipher"
+    ]
+  },
+  {
+    "name": "FileLoader",
+    "superclasses": "utilities package",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Loads a file from the disk as a String"
+    ],
+    "collaborators": [
+      ""
+    ]
+  },
+  {
+    "name": "FileSaver",
+    "superclasses": "utilities package",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Saves a file in the disk"
+    ],
+    "collaborators": [
+      ""
+    ]
+  },
+  {
+    "name": "OpeningWindow",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Has the 'main' function.",
+      "Creates the LatexEditorController.",
+      "Shows the starting window."
+    ],
+    "collaborators": [
+      "LatexEditorController",
+      "ChooseTemplate"
+    ]
+  },
+  {
+    "name": "ChooseTemplate",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Shows a window where the user can choose the type of document he wants to write."
+    ],
+    "collaborators": [
+      "LatexEditorController"
+    ]
+  },
+  {
+    "name": "MainWindow",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 1,
+    "responsibilities": [
+      "Shows the main window and work environment for the user.",
+      "Handles all user actions with the help of action listeners.",
+      "For each action the user chooses to do, calls the LatexEditorController to work on it on the backend."
+    ],
+    "collaborators": [
+      "LatexEditorController"
     ]
   }
 ]
