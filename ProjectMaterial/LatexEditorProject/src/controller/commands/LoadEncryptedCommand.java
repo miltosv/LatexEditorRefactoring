@@ -8,11 +8,9 @@ import utilities.FileLoader;
 
 public class LoadEncryptedCommand extends SuperCommand {
 
-	
-//	private LatexEditorController editorController;
 	private CipherManager ciphManager;
 	private FileLoader fileLoader;
-//	private VersionsManager vManager;
+
 	
 	public LoadEncryptedCommand(LatexEditorController editorController, CipherManager ciphManager,VersionsManager vm) {
 		super(editorController,vm);

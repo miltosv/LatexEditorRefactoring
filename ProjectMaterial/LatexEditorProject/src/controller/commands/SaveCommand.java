@@ -6,8 +6,6 @@ import utilities.FileSaver;
 
 
 public class SaveCommand extends SuperCommand {
-
-	private LatexEditorController editorController;
 	
 	public SaveCommand(LatexEditorController editorController) {
 		super(editorController);
