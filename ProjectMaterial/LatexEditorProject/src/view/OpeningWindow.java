@@ -44,8 +44,6 @@ public class OpeningWindow {
 		
 		editorController = new LatexEditorController();
 		
-		//latexEditorView.setController(editorController);
-		//latexEditorView.setVersionsManager(versionsManager);
 		initialize();
 		frame.setVisible(true);
 	}

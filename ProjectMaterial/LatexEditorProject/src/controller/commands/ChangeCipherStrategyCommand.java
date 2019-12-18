@@ -6,7 +6,6 @@ import model.encryption.CipherManager;
 
 public class ChangeCipherStrategyCommand extends SuperCommand{
 
-//	private LatexEditorController editorController;
 	private CipherManager ciphManager;
 
 	
@@ -18,10 +17,6 @@ public class ChangeCipherStrategyCommand extends SuperCommand{
 
 	@Override
 	public void execute() {
-		
-		
-		// TODO pass ciphering option from GUI, probably through editorController
-		// maybe through MainWindow
 		
 		ciphManager.changeCipherStratgyTo(ciphManager.getCipherStrategy());
 		

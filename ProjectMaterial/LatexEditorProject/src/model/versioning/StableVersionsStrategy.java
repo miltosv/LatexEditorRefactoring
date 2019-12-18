@@ -11,10 +11,11 @@ import utilities.FileSaver;
 public class StableVersionsStrategy implements VersionsStrategy{
 	private String versionID = "";
 	private FileSaver saver= new FileSaver();
+	
 	@Override
 	public void putVersion(Document document) {
-		// TODO Auto-generated method stub
-		String filename = "stables/"+document.getVersionID() + ".tex";//DUPLICATE CODE?
+	
+		String filename = "stables/"+document.getVersionID() + ".tex";
 		saver.save(filename, document.getContents());
 		versionID = document.getVersionID();
 		
@@ -22,7 +23,7 @@ public class StableVersionsStrategy implements VersionsStrategy{
 
 	@Override
 	public Document getVersion() {
-		// TODO Auto-generated method stub
+		
 		if(versionID.equals(""))
 			return null;
 		
@@ -34,7 +35,7 @@ public class StableVersionsStrategy implements VersionsStrategy{
 			}
 			scanner.close();
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 		Document document = new Document();
@@ -44,7 +45,7 @@ public class StableVersionsStrategy implements VersionsStrategy{
 
 	@Override
 	public void setEntireHistory(List<Document> documents) {
-		// TODO Auto-generated method stub
+		
 		for(int i = 0; i < documents.size(); i++) {
 			Document doc = documents.get(i);
 			saver.save("stables/"+doc.getVersionID() +".tex", doc.getContents());
@@ -58,7 +59,7 @@ public class StableVersionsStrategy implements VersionsStrategy{
 
 	@Override
 	public List<Document> getEntireHistory() {
-		// TODO Auto-generated method stub
+
 		List<Document> documents = new ArrayList<Document>();
 		if(versionID.equals(""))
 			return documents;
@@ -71,7 +72,7 @@ public class StableVersionsStrategy implements VersionsStrategy{
 					fileContents = fileContents + scanner.nextLine() + "\n";
 				}
 			} catch (FileNotFoundException e) {
-				// TODO Auto-generated catch block
+
 				e.printStackTrace();
 			}
 			Document document = new Document();
@@ -83,7 +84,6 @@ public class StableVersionsStrategy implements VersionsStrategy{
 
 	@Override
 	public void removeVersion() {
-		// TODO Auto-generated method stub
 		int n = Integer.parseInt(versionID);
 		if(n == 0)
 			versionID = "";

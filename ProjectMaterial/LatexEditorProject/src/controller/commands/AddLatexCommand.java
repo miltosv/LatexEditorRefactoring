@@ -57,7 +57,7 @@ public class AddLatexCommand extends SuperCommand{
 		
 		StringBuilder builder = new StringBuilder(contents);
 		
-		//builder.append(contents);
+		
 		builder.ensureCapacity(10000);
 		builder.insert((caretPosition),latexCommands.get(command));
 		String documentContents = (builder.toString());

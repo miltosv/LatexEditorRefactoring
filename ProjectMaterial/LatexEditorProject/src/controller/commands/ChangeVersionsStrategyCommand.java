@@ -11,7 +11,6 @@ public class ChangeVersionsStrategyCommand extends SuperCommand {
 
 	@Override
 	public void execute() {
-		// TODO Auto-generated method stub
 		versionsManager.changeStrategy();
 	}
 

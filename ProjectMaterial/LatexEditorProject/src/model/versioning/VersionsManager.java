@@ -39,15 +39,9 @@ public class VersionsManager {
 	}
 	
 	
-	/*public void setStrategy(VersionsStrategy strategy) {
-		this.strategy = strategy;
-	}
+
 	
-	public void setCurrentVersion(Document document) {
-		editorController.setCurrentDocument(document);
-	}
-	
-*/
+
 	public void saveContents() {
 		
 		if (this.isEnabled()){
@@ -56,20 +50,13 @@ public class VersionsManager {
 		}
 	}
 
-	/*
-	public void loadFromFile() {
-		
-		latexEditorView.loadFromFile();
-	}
-*/
 	public void enableStrategy() {
 		
-		//String strategyType = latexEditorView.getStrategy();
 		if(strategyType.equals("volatile") && strategy instanceof VolatileVersionsStrategy) {
 			enable();
 		}
 		else if(strategyType.equals("stable") && strategy instanceof VolatileVersionsStrategy) {
-			//allagh apo to ena sto allo
+
 			VersionsStrategy newStrategy = new StableVersionsStrategy();
 			newStrategy.setEntireHistory(strategy.getEntireHistory());
 			strategy = newStrategy;
@@ -88,7 +75,6 @@ public class VersionsManager {
 
 	public void changeStrategy() {
 		
-		//String strategyType = latexEditorView.getStrategy();
 		if(strategyType.equals("stable") && strategy instanceof VolatileVersionsStrategy) {
 			VersionsStrategy newStrategy = new StableVersionsStrategy();
 			newStrategy.setEntireHistory(strategy.getEntireHistory());

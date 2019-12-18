@@ -99,27 +99,21 @@ public class ChooseTemplate {
 					editorController.setTypeOfDocument("bookTemplate");
 				}
 				else if(report.isSelected()) {
-					//latexEditorView.setType("reportTemplate");
 					editorController.setTypeOfDocument("reportTemplate");
 				}
 				else if(article.isSelected()) {
-					//latexEditorView.setType("articleTemplate");
 					editorController.setTypeOfDocument("articleTemplate");
 				}
 				else if(letter.isSelected()) {
-					//latexEditorView.setType("letterTemplate");
 					editorController.setTypeOfDocument("letterTemplate");
 				}
 				else {
-					//latexEditorView.setType("emptyTemplate");
 					editorController.setTypeOfDocument("emptyTemplate");
 				}
 
 				editorController.enact("create");
 				
-				//latexEditorView.createMainwindow();
 				editorController.getMainWindow().startMainWindow();
-				//MainWindow mainWindow = new MainWindow(latexEditorView);
 				frame.dispose();
 			}
 		});
@@ -130,9 +124,7 @@ public class ChooseTemplate {
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(previous.equals("main")) {
-					//latexEditorView.createMainwindow();
 					editorController.getMainWindow().startMainWindow();
-					//MainWindow mainWindow = new MainWindow(latexEditorView);
 					frame.dispose();
 				}
 				else {

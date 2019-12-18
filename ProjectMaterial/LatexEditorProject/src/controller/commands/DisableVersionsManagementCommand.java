@@ -13,7 +13,6 @@ public class DisableVersionsManagementCommand extends SuperCommand {
 
 	@Override
 	public void execute() {
-		// TODO Auto-generated method stub
 		versionsManager.disable();
 	}
 

@@ -18,7 +18,6 @@ public class Document {
 	
 	
 	public Document() {
-		// TODO Auto-generated constructor stub
 		this.contents = "";
 	}
 
@@ -44,7 +43,6 @@ public class Document {
 
 
 	public String getVersionID() {
-		// TODO Auto-generated method stub
 		return versionID;
 	}
 	

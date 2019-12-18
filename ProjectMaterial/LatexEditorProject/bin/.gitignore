@@ -1,9 +1,6 @@
+/controller/
+/model/
+/resources/
+/tex-templates/
 /utilities/
 /view/
-<<<<<<< Updated upstream
-/model/
-=======
-=======
->>>>>>> master
-/controller/
->>>>>>> Stashed changes

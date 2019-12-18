@@ -17,7 +17,6 @@ public class LoadCommand extends SuperCommand {
 
 	@Override
 	public void execute() {
-		// TODO Auto-generated method stub
 		
 		String fileContents = "";
 		FileLoader loader=new FileLoader();
@@ -42,7 +41,6 @@ public class LoadCommand extends SuperCommand {
 		}
 		
 		editorController.setTypeOfDocument(type);
-		//editorView.setType(type);
 		editorController.setCurrentDocument(currentDocument);
 		versionsManager.putVersion(currentDocument);
 	}

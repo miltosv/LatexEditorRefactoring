@@ -15,7 +15,7 @@ public class CreateCommand extends SuperCommand {
 
 	@Override
 	public void execute() {
-		// TODO Auto-generated method stub
+	
 		String type = editorController.getTypeOfDocument();
 		
 		Document document = documentManager.createDocument(type);

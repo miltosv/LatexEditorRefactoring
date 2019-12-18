@@ -107,7 +107,6 @@ public class MainWindow {
 		JMenuItem takeSnapshot = new JMenuItem("Take Snapshot");
 		takeSnapshot.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//latexEditorView.setText(editorPane.getText());
 				editorController.enact("edit");
 			}
 		});
@@ -255,7 +254,6 @@ public class MainWindow {
 		JCheckBoxMenuItem menuStable = new JCheckBoxMenuItem("Stable");
 		menuStable.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//latexEditorView.setStrategy("stable");
 				editorController.getVersionsManager().setStrategyType("stable");
 				if(editorController.getVersionsManager().isEnabled() == false) {
 					editorController.enact("enableVersionsManagement");
@@ -272,7 +270,6 @@ public class MainWindow {
 		menuVolatile.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				//latexEditorView.setStrategy("volatile");
 				editorController.getVersionsManager().setStrategyType("volatile");
 				if(editorController.getVersionsManager().isEnabled() == false) {
 					editorController.enact("enableVersionsManagement");
@@ -396,7 +393,7 @@ public class MainWindow {
 			@Override
 			public void keyTyped(KeyEvent e) {
 				editorController.enact("edit");
-			} //TODO forget UPDATE current document ON EDIT ADD TO LATEX COMMAND KEEP PREVIOUS CARET POSITION
+			} 
 		});
 		
 		
@@ -406,7 +403,6 @@ public class MainWindow {
 		editorPane.setEditable(true);
 		scrollPane.setViewportView(editorPane);
 		
-//		System.out.println(latexEditorView.getCurrentDocument().getContents());
 		editorPane.setText(editorController.getCurrentDocument().getContents());
 	}
 

@@ -7,7 +7,6 @@ import java.util.HashMap;
 import controller.commands.Command;
 import controller.commands.CommandFactory;
 import model.Document;
-import model.DocumentManager;
 import model.encryption.CipherManager;
 import model.versioning.VersionsManager;
 import view.MainWindow;
@@ -20,16 +19,12 @@ public class LatexEditorController{
 	
 	
 	private VersionsManager versionsManager;
-	private DocumentManager documentManager;
 	private CipherManager ciphManager;
 	private MainWindow mainWindow;
 	
 	
 	public LatexEditorController() {
-
-		
-		//mainWindow = editorView.getMainWindow();
-		
+	
 		mainWindow = new MainWindow(this); 
 		
 		versionsManager= new VersionsManager(this);
