@@ -28,7 +28,7 @@ public class LoadEncryptedCommand extends SuperCommand {
 		
 		Document loadedDocument = new Document();
 		loadedDocument.setContents(decryptedText);
-		
+		System.out.print(decryptedText);
 		editorController.setTypeOfDocument("emptyTemplate");
 		editorController.setCurrentDocument(loadedDocument);
 		versionsManager.putVersion(loadedDocument);
