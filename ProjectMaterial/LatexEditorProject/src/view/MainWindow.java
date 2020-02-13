@@ -380,6 +380,7 @@ public class MainWindow {
 					
 					editorController.setFilePathName(filename);
 					editorController.enact("loadEncrypted");
+					editorPane.setText(editorController.getCurrentDocument().getContents());
 				}
 			}
 		});
